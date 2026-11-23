@@ -322,6 +322,13 @@ section.band.tight{padding-block:80px}
 @media (max-width:880px){.role{grid-template-columns:1fr;gap:12px}}
 
 /* Principles */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;min-width:0}
+.pillar .pn{font:500 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+.pillar h3{font-size:20px;letter-spacing:-.02em;line-height:1.2;margin-top:10px}
+.pillar .ticks{margin-top:18px}
+@media (max-width:1060px){.pillars{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.pillars{grid-template-columns:1fr}}
 .principles{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
 .principle{padding:28px 0;border-top:1px solid var(--line)}
 .principle h3{font-size:22px;letter-spacing:-.025em;margin-bottom:8px}
@@ -452,6 +459,7 @@ footer{border-top:1px solid var(--line);padding-block:72px 40px;font-size:14.5px
     <nav aria-label="Main"><ul class="mainnav">
       <li><a href="#products" data-nav="products">Products</a></li>
       <li><a href="#insightscholar" data-nav="insightscholar">InsightScholar</a></li>
+      <li><a href="#heritage" data-nav="heritage">Heritage Prestige</a></li>
       <li><a href="#about" data-nav="about">About</a></li>
       <li><a href="#faq" data-nav="faq">FAQ</a></li>
       <li><a href="#contact" data-nav="contact">Contact</a></li>
@@ -476,6 +484,7 @@ footer{border-top:1px solid var(--line);padding-block:72px 40px;font-size:14.5px
     <a href="#home" data-nav="home">Home</a>
     <a href="#products" data-nav="products">Products</a>
     <a href="#insightscholar" data-nav="insightscholar">InsightScholar</a>
+    <a href="#heritage" data-nav="heritage">Heritage Prestige</a>
     <a href="#about" data-nav="about">About</a>
     <a href="#faq" data-nav="faq">FAQ</a>
     <a href="#contact" data-nav="contact">Contact</a>
@@ -492,7 +501,7 @@ footer{border-top:1px solid var(--line);padding-block:72px 40px;font-size:14.5px
       <div class="hero-top">
         <h1 class="enter">Report cards and school records for <span class="hl">Zimbabwean schools</span></h1>
         <div>
-          <p class="lede enter" style="--d:1">InsightScholar takes Forms 1 to 6 through all three terms. Teachers enter marks, heads approve, and every learner gets a printable PDF report card.</p>
+          <p class="lede enter" style="--d:1">InsightScholar takes your school through all three terms. Teachers enter marks, heads approve, and every learner gets a printable PDF report card.</p>
           <div class="cta-row enter" style="--d:2">
             <a class="btn btn-grad" href="#contact">Book a demo <svg class="arr" width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a>
             <a class="btn btn-line" href="https://wa.me/263786270017" target="_blank" rel="noopener"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#wa"/></svg>Message us on WhatsApp</a>
@@ -597,6 +606,21 @@ footer{border-top:1px solid var(--line);padding-block:72px 40px;font-size:14.5px
   </section>
 
   <section class="band rule">
+    <div class="wrap split">
+      <div>
+        <h2>The Heritage Prestige <span class="hl">Program</span></h2>
+        <p class="body">Elevating school standards. Inspiring future aviators. InsightScholar plus mentorship, aviation experiences and recognised certificates, bringing the full aviation ecosystem to your school.</p>
+        <div class="cta-row"><a class="btn btn-grad" href="#heritage">Explore the program</a><a class="btn btn-line" href="#contact">Enquire</a></div>
+      </div>
+      <ul class="ticks">
+        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Reporting and digital infrastructure</b><span>Printed reports, a secure online portal and InsightScholar.</span></div></li>
+        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Professional development and recognition</b><span>Career guidance, mentorship and teacher development.</span></div></li>
+        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Aviation experience and excursions</b><span>Introductory flights, field trips, airport and tower visits.</span></div></li>
+        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Certificates and academic honours</b><span>Junior Aviation Certificates and Academic Merit Awards.</span></div></li>
+      </ul>
+    </div>
+  </section>
+  <section class="band rule">
     <div class="wrap">
       <div class="sec-head">
         <h2>Products from Delmar</h2>
@@ -606,7 +630,7 @@ footer{border-top:1px solid var(--line);padding-block:72px 40px;font-size:14.5px
         <article class="prod lead">
           <span class="status" style="color:var(--green)">Live</span>
           <h3>InsightScholar</h3>
-          <p>School management and reporting for Zimbabwean secondary schools, from mark entry to signed report cards.</p>
+          <p>School management and reporting for Zimbabwean schools, from mark entry to signed report cards.</p>
           <ul class="feat"><li>Termly report cycles</li><li>Mark and comment entry</li><li>HOD and head approval</li><li>PDF report cards</li><li>CSV and Excel import</li><li>Class and subject analytics</li></ul>
           <div class="cta-row"><a class="btn btn-grad" href="#insightscholar">See InsightScholar</a><a class="btn btn-line" href="#contact">Book a demo</a></div>
         </article>
@@ -633,7 +657,7 @@ footer{border-top:1px solid var(--line);padding-block:72px 40px;font-size:14.5px
   <section class="phero">
     <div class="wrap">
       <h1>InsightScholar runs your school's report cycle</h1>
-      <p class="lede">Marks, comments, approvals and report cards for Forms 1 to 6, in one system your whole staff can use from a phone or a laptop.</p>
+      <p class="lede">Marks, comments, approvals and report cards for every class, in one system your whole staff can use from a phone or a laptop.</p>
       <div class="cta-row"><a class="btn btn-grad" href="#contact">Book a demo <svg class="arr" width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a><a class="btn btn-line" href="#faq">Read the FAQ</a></div>
     </div>
   </section>
@@ -723,6 +747,67 @@ footer{border-top:1px solid var(--line);padding-block:72px 40px;font-size:14.5px
   <div data-cta></div>
 </div>
 
+<!-- ============ HERITAGE PRESTIGE PROGRAM ============ -->
+<div class="view" data-view="heritage" data-title="Heritage Prestige Program · Delmar Technologies" hidden>
+  <section class="phero">
+    <div class="wrap">
+      <p class="crumb">Insight Scholar Heritage Prestige Program</p>
+      <h1>Elevating school standards. Inspiring future <span class="hl">aviators.</span></h1>
+      <p class="lede">A product of Delmar Technologies (Pvt) Ltd. We bring the full aviation ecosystem to the school, through world-class school management, mentorship, aviation experiences and recognised certificates, for less than the price of a single sheet of paper per learner.</p>
+      <div class="cta-row"><a class="btn btn-grad" href="#contact">Enquire about the program <svg class="arr" width="14" height="14" aria-hidden="true"><use href="#arrow"/></svg></a><a class="btn btn-line" href="https://wa.me/263786270017" target="_blank" rel="noopener"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#wa"/></svg>Message us on WhatsApp</a></div>
+    </div>
+  </section>
+  <section class="band">
+    <div class="wrap split top">
+      <div>
+        <p class="statement" style="font-size:clamp(28px,3.4vw,44px)">Something that has <span class="hl">never happened</span> in Zimbabwe before.</p>
+      </div>
+      <div>
+        <p class="body" style="margin-top:0;color:var(--muted);font-size:17px">Schools were asked to implement the Heritage Based Curriculum (HBC), but they had no industry partner to show them how. Aviation was in pieces: the airport, the tower, pilots and training were never connected for learners.</p>
+        <p class="body" style="color:var(--muted);font-size:17px;margin-top:16px">This program connects it all for the first time. We are not competing with other programs. We are doing something new.</p>
+        <dl class="facts" style="margin-top:32px">
+          <div style="grid-column:1/-1"><dt>Vision</dt><dd>To see every Zimbabwean learner connected to their heritage, their talent, and a real industry, so they can dream bigger and achieve more.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+  <section class="band rule">
+    <div class="wrap">
+      <div class="sec-head"><h2>Our services: the 4 pillars</h2><p>Everything a school needs to deliver HBC aviation projects, in one program.</p></div>
+      <div class="pillars">
+        <article class="pillar"><span class="pn">Pillar 1</span><h3>Reporting and digital infrastructure</h3><ul class="ticks"><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Physical printed reports</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Secure online portal</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>World-class school management</b><span>For schools, teachers and parents.</span></div></li></ul></article>
+        <article class="pillar"><span class="pn">Pillar 2</span><h3>Professional development and recognition</h3><ul class="ticks"><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Career guidance and mentorship</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Connections with aviation professionals</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Teacher development</b><span>And school standards elevation.</span></div></li></ul></article>
+        <article class="pillar"><span class="pn">Pillar 3</span><h3>Aviation experience and excursions</h3><ul class="ticks"><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Aviation introductory flights</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Aviation field trips</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Airport and tower visits</b><span>Airport visits with ACZ, tower learning with ATCAZ, mentorship with Women in Aviation Zimbabwe, and flights with Guthrie Aviation and Flight Wings Aviation.</span></div></li></ul></article>
+        <article class="pillar"><span class="pn">Pillar 4</span><h3>Certificates and academic honours</h3><ul class="ticks"><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Junior Aviation Certificates</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Academic Merit Awards</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Recognition that motivates</b><span>Builds each learner's portfolio for the future.</span></div></li></ul></article>
+      </div>
+    </div>
+  </section>
+  <section class="band rule">
+    <div class="wrap split top">
+      <div>
+        <h2>What schools get</h2>
+        <ul class="ticks"><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>The InsightScholar platform</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Printed reports</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>HBC School Based Project support</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Prestige status</b><span>As a Heritage Prestige School.</span></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Access to national aviation partners</b></div></li></ul>
+      </div>
+      <div>
+        <h2>Safety and child protection</h2>
+        <ul class="ticks"><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Licensed operators only</b><span>All flights by licensed operators under CAAZ regulations.</span></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Parental consent for every activity</b><span>No learner flies without written parental consent.</span></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Supervised groups</b><span>School staff present at all times.</span></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Briefed and covered</b><span>Full indemnity and safety briefing before every excursion.</span></div></li></ul>
+      </div>
+    </div>
+  </section>
+  <section class="band rule">
+    <div class="wrap">
+      <div class="sec-head"><h2>Aligned with national priorities</h2><p>The program is built around Zimbabwe's development and curriculum goals.</p></div>
+      <div class="principles">
+        <div class="principle"><h3>NDS2 (2026–2030)</h3><p>Priority 5: Science, Technology, Innovation, Digitalisation and Human Capital Development. Priority 6: Youth Development.</p></div>
+        <div class="principle"><h3>Vision 2030</h3><p>Building an empowered, upper-middle-income Zimbabwe.</p></div>
+        <div class="principle"><h3>Heritage Based Curriculum (HBC 2024–2030)</h3><p>Practical School Based Projects, delivered with a real industry partner.</p></div>
+        <div class="principle"><h3>Become a Heritage Prestige School</h3><p>Call or WhatsApp +263 786 270 017, or email info@delmartechnologies.co.zw.</p></div>
+      </div>
+    </div>
+  </section>
+  <div data-cta></div>
+</div>
+
 <!-- ============ PRODUCTS ============ -->
 <div class="view" data-view="products" data-title="Products · Delmar Technologies" hidden>
   <section class="phero">
@@ -741,7 +826,7 @@ footer{border-top:1px solid var(--line);padding-block:72px 40px;font-size:14.5px
         <article class="prod lead">
           <span class="status" style="color:var(--green)">Live</span>
           <h3>InsightScholar</h3>
-          <p>School management and reporting for secondary schools. Teachers enter marks and comments, heads approve, and every learner gets a PDF report card on time.</p>
+          <p>School management and reporting for Zimbabwean schools. Teachers enter marks and comments, heads approve, and every learner gets a PDF report card on time.</p>
           <ul class="feat"><li>Termly report cycles</li><li>Mark and comment entry</li><li>HOD and head approval</li><li>PDF report cards</li><li>CSV and Excel import</li><li>Class and subject analytics</li></ul>
           <div class="cta-row"><a class="btn btn-grad" href="#insightscholar">See InsightScholar</a><a class="btn btn-line" href="#contact">Book a demo</a></div>
         </article>
@@ -827,8 +912,8 @@ footer{border-top:1px solid var(--line);padding-block:72px 40px;font-size:14.5px
       <div class="faq-group">
         <h2>About InsightScholar</h2>
         <div class="faq">
-          <details><summary>What is InsightScholar?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>InsightScholar is school management and reporting software for Zimbabwean secondary schools. It handles report cycles, mark and comment entry, HOD and head approval, PDF report cards, learner import and analytics.</p></div></details>
-          <details><summary>Which schools is it for?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>Secondary schools running Forms 1 to 6 with streams and three terms a year. If your school is organised differently, tell us and we will show you how it fits.</p></div></details>
+          <details><summary>What is InsightScholar?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>InsightScholar is school management and reporting software for Zimbabwean schools. It handles report cycles, mark and comment entry, HOD and head approval, PDF report cards, learner import and analytics.</p></div></details>
+          <details><summary>Which schools is it for?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>Zimbabwean schools running classes, streams and three terms a year. If your school is organised differently, tell us and we will show you how it fits.</p></div></details>
           <details><summary>Do we need to install anything?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>No. InsightScholar runs in a web browser, so staff can use it on the phones and laptops they already have.</p></div></details>
           <details><summary>Is there a teacher app?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>A teacher app with roll call and timetables is in development. Ask to be notified and we will tell you when it is ready.</p></div></details>
         </div>
@@ -978,7 +1063,7 @@ footer{border-top:1px solid var(--line);padding-block:72px 40px;font-size:14.5px
         <a class="brand" href="#home" aria-label="Delmar Technologies home"><svg viewBox="0 0 600 910" aria-hidden="true" fill="url(#dg)"><use href="#d-mark"/></svg><div><b>DELMAR</b><span>TECHNOLOGIES</span></div></a>
         <p>Software for Zimbabwean schools and organisations.</p>
       </div>
-      <div><h2>Products</h2><ul><li><a href="#insightscholar">InsightScholar</a></li><li><a href="#products">Teacher app</a></li><li><a href="#products">LinkUp</a></li></ul></div>
+      <div><h2>Products</h2><ul><li><a href="#insightscholar">InsightScholar</a></li><li><a href="#heritage">Heritage Prestige Program</a></li><li><a href="#products">Teacher app</a></li><li><a href="#products">LinkUp</a></li></ul></div>
       <div><h2>Company</h2><ul><li><a href="#about">About</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
       <div><h2>Legal</h2><ul><li><a href="#privacy">Privacy policy</a></li><li><a href="#terms">Terms of use</a></li></ul></div>
       <div><h2>Get in touch</h2><div class="fcontact"><span>+263 786 270 017</span><span>info@delmartechnologies.co.zw</span><span>Greystone Park, Harare</span></div></div>
