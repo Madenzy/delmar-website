@@ -8,12 +8,12 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 910'%3E%3Cpath fill='%23167A42' d='M270 370V910A270 270 0 0 1 270 370Z'/%3E%3Cpath fill='%23167A42' d='M600 0V630A280 280 0 0 1 320 910V280A280 280 0 0 1 600 0Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@300;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@300;700&family=Unbounded:wght@600..800&display=swap">
 <style>
 /* VOICE: formal, confident, for heads, associations and government departments
    IDEA: a Great Zimbabwe dry-stone wall whose chevron course is also a runway's yellow chevrons
    PICTURE: the wall across the hero, built course by course once on load
-   COLOUR and TYPE: forest, granite, Delmar green for actions, runway yellow for chevrons; Archivo wide + normal
+   COLOUR and TYPE: forest, granite, Delmar green for actions, runway yellow for chevrons; Unbounded hero, Archivo wide + normal
    LAYOUT: full-width bands stacked like stone courses, left aligned, ruled rows instead of cards */
 :root{
   --forest:#0C332F;
@@ -81,7 +81,7 @@ img,svg{display:block}
 /* Hero */
 .hero{background:var(--forest);color:var(--on-forest);position:relative;overflow:hidden}
 .hero .wrap{padding-top:clamp(48px,7vw,96px);padding-bottom:clamp(36px,5vw,56px)}
-.hero h1{font-size:clamp(40px,6.6vw,96px);max-width:15ch}
+.hero h1{font-family:"Unbounded",var(--f);font-stretch:100%;font-weight:700;letter-spacing:-.025em;line-height:1.02;font-size:clamp(36px,6vw,88px);max-width:15ch}
 .hero-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 48px;align-items:end;margin-top:clamp(32px,4vw,48px)}
 .hero .lede{font-size:clamp(18px,1.6vw,20px);line-height:1.55;color:var(--on-forest-muted);max-width:54ch}
 .hero .lede strong{color:var(--on-forest);font-weight:600}
@@ -230,6 +230,31 @@ img,svg{display:block}
 .copy{flex:none;background:none;border:0;color:var(--on-forest);font:600 14.5px var(--f);text-decoration:underline;text-underline-offset:4px;cursor:pointer;min-height:44px;padding:0 4px}
 @media (max-width:900px){.contact .wrap{grid-template-columns:1fr}}
 
+/* Pages */
+.nav ul a[aria-current="page"]{color:var(--on-forest);text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:2px;text-decoration-color:var(--yellow)}
+.phead{background:var(--forest);color:var(--on-forest)}
+.phead .wrap{padding-top:clamp(48px,7vw,96px);padding-bottom:clamp(32px,4vw,48px)}
+.phead h1{font-size:clamp(40px,6vw,80px)}
+.phead .lede{margin-top:20px;font-size:clamp(18px,1.6vw,20px);color:var(--on-forest-muted);max-width:56ch}
+.wall-static{height:clamp(56px,6vw,90px)}
+.wall-static .course,.contact .wall .course{animation:none}
+.wall-static .chev{animation:none;stroke-dashoffset:0}
+.programme .prog-top h1{font-size:clamp(40px,6vw,84px)}
+.teaser{background:var(--forest);color:var(--on-forest)}
+.teaser .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:32px 72px;align-items:end;padding-block:clamp(64px,8vw,112px)}
+.teaser h2{font-size:clamp(34px,4.8vw,64px)}
+.teaser .tagline{font-style:italic;font-size:clamp(19px,1.8vw,22px);margin-top:18px;color:var(--yellow)}
+.teaser p{color:var(--on-forest-muted)}
+.teaser .actions{margin-top:28px}
+@media (max-width:860px){.teaser .wrap{grid-template-columns:1fr}}
+.cta{background:var(--forest);color:var(--on-forest);border-top:1px solid var(--forest-3)}
+.cta .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between;padding-block:40px}
+.cta p{font-size:clamp(20px,2vw,24px);font-weight:600}
+.programme + .sec,.platforms{border-top:0}
+h1[tabindex="-1"]:focus{outline:none}
+.phead + .platforms{padding-top:clamp(40px,5vw,64px)}
+.phead + .platforms .plat{margin-top:0}
+
 footer{background:var(--forest);color:var(--on-forest-muted);border-top:1px solid var(--forest-3);font-size:14.5px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center;padding-block:28px}
 footer nav{display:flex;flex-wrap:wrap;gap:8px 24px}
@@ -249,14 +274,14 @@ footer a:hover{color:var(--on-forest)}
 
 <header class="nav on-forest" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Delmar Technologies, back to top">
+    <a class="brand" href="#home" aria-label="Delmar Technologies home">
       <svg viewBox="0 0 600 910" aria-hidden="true"><use href="#d-mark"/></svg>
       <div><b>DELMAR</b><span>TECHNOLOGIES</span></div>
     </a>
     <nav aria-label="Main">
       <ul id="menu">
-        <li><a href="#programme">Heritage Prestige</a></li>
-        <li><a href="#platforms">Software</a></li>
+        <li><a href="#heritage">Heritage Prestige</a></li>
+        <li><a href="#software">Software</a></li>
         <li><a href="#company">Company</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -267,14 +292,15 @@ footer a:hover{color:var(--on-forest)}
 </header>
 
 <main id="main">
-  <section class="hero on-forest" id="top">
+<div class="view" data-view="home" data-title="Delmar Technologies">
+  <section class="hero on-forest">
     <div class="wrap">
       <h1 class="wide">Technology for Zimbabwe’s institutions.</h1>
       <div class="hero-foot">
         <p class="lede">Delmar Technologies is a software company in Harare. We build school management software and run the <strong>Heritage Prestige Program</strong>, which connects learners to Zimbabwe’s aviation industry.</p>
         <div class="actions">
           <a class="btn btn-green" href="#contact">Arrange a meeting</a>
-          <a class="btn btn-line" href="#programme">Read about the program</a>
+          <a class="btn btn-line" href="#heritage">Read about the program</a>
         </div>
       </div>
     </div>
@@ -301,31 +327,47 @@ footer a:hover{color:var(--on-forest)}
           <h3 class="wide">Software</h3>
           <div>
             <p>Our school platform runs report cycles from mark entry to approved, printable report cards, with a secure portal for teachers and parents.</p>
-            <a class="textlink more" href="#platforms">See our software</a>
+            <a class="textlink more" href="#software">See our software</a>
           </div>
         </li>
         <li>
           <h3 class="wide">Experiences</h3>
           <div>
             <p>Airport and tower visits, aviation field trips and introductory flights, run with licensed operators and full parental consent.</p>
-            <a class="textlink more" href="#programme">See the program</a>
+            <a class="textlink more" href="#heritage">See the program</a>
           </div>
         </li>
         <li>
           <h3 class="wide">Recognition</h3>
           <div>
             <p>Junior Aviation Certificates, Academic Merit Awards and Heritage Prestige School status that learners and schools can point to.</p>
+            <a class="textlink more" href="#heritage">See what schools get</a>
           </div>
         </li>
       </ul>
     </div>
   </section>
 
-  <section class="programme sec on-forest" id="programme" aria-labelledby="prog-title">
+  <section class="teaser on-forest">
+    <div class="wrap">
+      <div>
+        <h2 class="wide">Heritage Prestige Program</h2>
+        <p class="tagline">Elevating school standards. Inspiring future aviators.</p>
+      </div>
+      <div>
+        <p>For the first time, learners connect to Zimbabwe’s aviation industry through school: mentorship, airport and tower visits, introductory flights and Junior Aviation Certificates, all with full parental consent.</p>
+        <div class="actions"><a class="btn btn-green" href="#heritage">Read about the program</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="view" data-view="heritage" data-title="Heritage Prestige Program – Delmar Technologies" hidden>
+  <section class="programme sec on-forest" aria-labelledby="prog-title">
     <div class="wrap">
       <div class="prog-top">
         <div>
-          <h2 class="wide" id="prog-title">Heritage Prestige Program</h2>
+          <h1 class="wide" id="prog-title">Heritage Prestige Program</h1>
           <p class="tagline">Elevating school standards. Inspiring future aviators.</p>
           <p class="by">A program by Delmar Technologies (Pvt) Ltd</p>
         </div>
@@ -421,10 +463,25 @@ footer a:hover{color:var(--on-forest)}
     </div>
   </section>
 
-  <section class="platforms sec" id="platforms">
+  <section class="cta on-forest">
     <div class="wrap">
-      <h2 class="sec-title wide">Our software</h2>
-      <p class="intro">Each product runs in the browser on the phones and laptops schools already have, and is tested with real staff before it ships.</p>
+      <p>Want to see this for your school or organisation?</p>
+      <a class="btn btn-green" href="#contact">Arrange a meeting</a>
+    </div>
+  </section>
+</div>
+
+<div class="view" data-view="software" data-title="Software – Delmar Technologies" hidden>
+  <section class="phead on-forest">
+    <div class="wrap">
+      <h1 class="wide">Our software</h1>
+      <p class="lede">Each product runs in the browser on the phones and laptops schools already have, and is tested with real staff before it ships.</p>
+    </div>
+    <svg class="wall wall-static" viewBox="0 0 1600 90" preserveAspectRatio="xMidYMax slice" aria-hidden="true" data-seed="609"></svg>
+  </section>
+
+  <section class="platforms sec">
+    <div class="wrap">
       <ul class="plat">
         <li>
           <h3>School platform<span class="note">Currently InsightScholar</span></h3>
@@ -445,7 +502,24 @@ footer a:hover{color:var(--on-forest)}
     </div>
   </section>
 
-  <section class="sec" id="company">
+  <section class="cta on-forest">
+    <div class="wrap">
+      <p>Want to see this for your school or organisation?</p>
+      <a class="btn btn-green" href="#contact">Arrange a meeting</a>
+    </div>
+  </section>
+</div>
+
+<div class="view" data-view="company" data-title="Company – Delmar Technologies" hidden>
+  <section class="phead on-forest">
+    <div class="wrap">
+      <h1 class="wide">About Delmar</h1>
+      <p class="lede">A private limited company registered in Zimbabwe, based in Greystone Park, Harare.</p>
+    </div>
+    <svg class="wall wall-static" viewBox="0 0 1600 90" preserveAspectRatio="xMidYMax slice" aria-hidden="true" data-seed="163"></svg>
+  </section>
+
+  <section class="sec">
     <div class="wrap company">
       <h2 class="big wide">A Zimbabwean company, building for local institutions.</h2>
       <div>
@@ -461,11 +535,22 @@ footer a:hover{color:var(--on-forest)}
     </div>
   </section>
 
-  <section class="contact on-forest" id="contact" aria-labelledby="contact-title">
-    <svg class="wall" id="wall2" viewBox="0 0 1600 110" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
+  
+
+  <section class="cta on-forest">
+    <div class="wrap">
+      <p>Want to see this for your school or organisation?</p>
+      <a class="btn btn-green" href="#contact">Arrange a meeting</a>
+    </div>
+  </section>
+</div>
+
+<div class="view" data-view="contact" data-title="Contact – Delmar Technologies" hidden>
+  <section class="contact on-forest" aria-labelledby="contact-title">
+    <svg class="wall" viewBox="0 0 1600 110" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
     <div class="wrap">
       <div>
-        <h2 class="wide" id="contact-title">Arrange a meeting.</h2>
+        <h1 class="wide" id="contact-title">Arrange a meeting.</h1>
         <p class="sub">We meet schools, associations and government departments in Harare or by call. Tell us who you represent and what you would like to see.</p>
         <div class="actions">
           <a class="btn btn-green" href="mailto:info@delmartechnologies.co.zw?subject=Meeting%20request">Email Delmar</a>
@@ -479,13 +564,14 @@ footer a:hover{color:var(--on-forest)}
       </ul>
     </div>
   </section>
+</div>
 </main>
 
 <footer>
   <div class="wrap">
     <span>© 2026 Delmar Technologies (Pvt) Ltd</span>
     <nav aria-label="Footer">
-      <a href="#programme">Heritage Prestige</a><a href="#platforms">Software</a><a href="#company">Company</a><a href="#contact">Contact</a>
+      <a href="#heritage">Heritage Prestige</a><a href="#software">Software</a><a href="#company">Company</a><a href="#contact">Contact</a>
     </nav>
   </div>
 </footer>
@@ -527,7 +613,22 @@ footer a:hover{color:var(--on-forest)}
     });
   }
   build(document.getElementById("wall"),{h:200,seed:7,rows:[{h:30},{h:26},{h:22},{h:34,chev:true},{h:20},{h:18},{h:16}]});
-  build(document.getElementById("wall2"),{h:110,seed:19,rows:[{h:26},{h:22},{h:20},{h:18},{h:16}]});
+  document.querySelectorAll(".contact .wall").forEach(function(w,i){build(w,{h:110,seed:19+i,rows:[{h:26},{h:22},{h:20},{h:18},{h:16}]})});
+  document.querySelectorAll(".wall-static").forEach(function(w){build(w,{h:90,seed:+w.getAttribute("data-seed"),rows:[{h:24},{h:22},{h:24,chev:true},{h:20}]})});
+
+  // Pages: show the view named in the hash
+  var views=[].slice.call(document.querySelectorAll(".view")),names=views.map(function(v){return v.getAttribute("data-view")});
+  function show(){
+    var h=location.hash.slice(1),first=show.done,el=h&&names.indexOf(h)<0?document.getElementById(h):null,inView=el&&el.closest?el.closest(".view"):null;
+    var name=names.indexOf(h)>-1?h:inView?inView.getAttribute("data-view"):(show.cur||"home");show.cur=name;
+    views.forEach(function(v){v.hidden=v.getAttribute("data-view")!==name});
+    var cur=views[names.indexOf(name)];document.title=cur.getAttribute("data-title");
+    document.querySelectorAll(".nav ul a").forEach(function(a){if(a.getAttribute("href")==="#"+name)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+    if(names.indexOf(h)>-1||!h){window.scrollTo(0,0);if(first){var t=cur.querySelector("h1");if(t){t.setAttribute("tabindex","-1");t.focus({preventScroll:true})}}}
+    else if(el){el.scrollIntoView()}
+    show.done=true;
+  }
+  window.addEventListener("hashchange",show);show();
 
   // Mobile menu
   var nav=document.getElementById("nav"),mb=nav.querySelector(".menu-btn");
