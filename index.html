@@ -8,12 +8,12 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 910'%3E%3Cpath fill='%23167A42' d='M270 370V910A270 270 0 0 1 270 370Z'/%3E%3Cpath fill='%23167A42' d='M600 0V630A280 280 0 0 1 320 910V280A280 280 0 0 1 600 0Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@300;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@300;700&family=Unbounded:wght@600..800&display=swap">
 <style>
 /* VOICE: formal, confident, for heads, associations and government departments
    IDEA: a Great Zimbabwe dry-stone wall whose chevron course is also a runway's yellow chevrons
    PICTURE: the wall across the hero, built course by course once on load
-   COLOUR and TYPE: forest, granite, Delmar green for actions, runway yellow for chevrons; Archivo wide + normal
+   COLOUR and TYPE: forest, granite, Delmar green for actions, runway yellow for chevrons; Unbounded hero, Archivo wide + normal
    LAYOUT: full-width bands stacked like stone courses, left aligned, ruled rows instead of cards */
 :root{
   --forest:#0C332F;
@@ -81,7 +81,7 @@ img,svg{display:block}
 /* Hero */
 .hero{background:var(--forest);color:var(--on-forest);position:relative;overflow:hidden}
 .hero .wrap{padding-top:clamp(48px,7vw,96px);padding-bottom:clamp(36px,5vw,56px)}
-.hero h1{font-size:clamp(40px,6.6vw,96px);max-width:15ch}
+.hero h1{font-family:"Unbounded",var(--f);font-stretch:100%;font-weight:700;letter-spacing:-.025em;line-height:1.02;font-size:clamp(36px,6vw,88px);max-width:15ch}
 .hero-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 48px;align-items:end;margin-top:clamp(32px,4vw,48px)}
 .hero .lede{font-size:clamp(18px,1.6vw,20px);line-height:1.55;color:var(--on-forest-muted);max-width:54ch}
 .hero .lede strong{color:var(--on-forest);font-weight:600}
