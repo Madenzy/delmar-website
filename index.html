@@ -255,11 +255,48 @@ h1[tabindex="-1"]:focus{outline:none}
 .phead + .platforms{padding-top:clamp(40px,5vw,64px)}
 .phead + .platforms .plat{margin-top:0}
 
-footer{background:var(--forest);color:var(--on-forest-muted);border-top:1px solid var(--forest-3);font-size:14.5px}
-footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center;padding-block:28px}
-footer nav{display:flex;flex-wrap:wrap;gap:8px 24px}
-footer a{text-decoration:none}
-footer a:hover{color:var(--on-forest)}
+/* Footer */
+.foot{background:#082724;color:var(--on-forest-muted);font-size:16px;padding-bottom:24px}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,.8fr) minmax(0,.8fr) minmax(0,1.4fr);gap:40px 32px;padding-block:64px 48px}
+.foot-grid > :last-child{grid-column:auto}
+.foot .brand svg{fill:var(--green-on-forest);width:24px}
+.foot .brand{color:var(--on-forest);margin:0;display:inline-flex}
+.foot-brand p{margin-top:20px;max-width:30ch;line-height:1.55}
+.foot h2{font-size:15px;font-weight:600;color:var(--on-forest);margin-bottom:16px}
+.foot ul li{padding:5px 0;line-height:1.4}
+.foot a{text-decoration:none;color:var(--on-forest-muted)}
+.foot a:hover{color:var(--on-forest);text-decoration:underline;text-underline-offset:4px}
+.foot a[href^="mailto"]{overflow-wrap:anywhere}
+@media (min-width:1001px){.foot a[href^="mailto"]{white-space:nowrap}}
+.foot-base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;border-top:1px solid var(--forest-3);padding-top:24px;font-size:14.5px}
+@media (max-width:1000px){.foot-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.foot-brand{grid-column:1/-1}}
+@media (max-width:560px){.foot-grid{grid-template-columns:1fr 1fr}.foot-grid > :last-child{grid-column:1/-1}.foot-base{padding-bottom:64px}}
+
+/* Floating WhatsApp */
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:45;display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px 0 18px;border-radius:999px;background:#25D366;color:#062E16;font:600 16px var(--f);text-decoration:none;box-shadow:0 10px 24px -8px rgba(4,30,20,.55)}
+.wa:hover{background:#3BE07A}
+.wa:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+@media (max-width:560px){.wa{padding:0;width:52px;justify-content:center}.wa span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+
+/* FAQ and legal pages */
+.faq > *{max-width:900px}
+.faq-group + .faq-group{margin-top:56px}
+.faq-group h2{font-size:clamp(24px,2.6vw,32px);font-stretch:112%;font-weight:700;letter-spacing:-.01em;margin-bottom:16px}
+.faq details{border-top:1px solid var(--stone)}
+.faq details:last-child{border-bottom:1px solid var(--stone)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;align-items:center;padding:20px 0;font-weight:600;font-size:18px;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:14px;height:14px;background:linear-gradient(var(--green),var(--green)) center/14px 2px no-repeat,linear-gradient(var(--green),var(--green)) center/2px 14px no-repeat}
+.faq details[open] summary::after{background:linear-gradient(var(--green),var(--green)) center/14px 2px no-repeat}
+.faq details p{padding:0 0 22px;max-width:65ch;color:var(--muted)}
+.prose > *{max-width:760px}
+.prose h2{font-size:22px;font-weight:700;margin:40px 0 10px}
+.prose h2:first-child{margin-top:0}
+.prose p,.prose li{max-width:68ch}
+.prose p + p,.prose ul + p{margin-top:12px}
+.prose ul{list-style:disc;padding-left:22px;margin-top:10px}
+.prose li{padding:4px 0}
+.phead .updated{margin-top:12px;font-size:15px;color:var(--on-forest-muted)}
 </style>
 </head>
 <body>
@@ -565,16 +602,108 @@ footer a:hover{color:var(--on-forest)}
     </div>
   </section>
 </div>
+
+<div class="view" data-view="faq" data-title="FAQ – Delmar Technologies" hidden>
+  <section class="phead on-forest">
+    <div class="wrap">
+      <h1 class="wide">Questions we get asked</h1>
+      <p class="lede">Can’t find your answer? Message us on WhatsApp or email, and the people who build our software will reply.</p>
+    </div>
+    <svg class="wall wall-static" viewBox="0 0 1600 90" preserveAspectRatio="xMidYMax slice" aria-hidden="true" data-seed="825"></svg>
+  </section>
+  <section class="sec"><div class="wrap faq"><div class="faq-group"><h2>Our school platform</h2><details><summary>What is InsightScholar?</summary><p>InsightScholar is our school management and reporting software for Zimbabwean schools. It handles report cycles, mark and comment entry, approval by HODs and heads, PDF report cards, learner import and results by class and subject.</p></details><details><summary>Which schools is it for?</summary><p>Zimbabwean schools running classes, streams and three terms a year. If your school is organised differently, tell us and we will show you how it fits.</p></details><details><summary>Do we need to install anything?</summary><p>No. It runs in a web browser, so staff can use it on the phones and laptops they already have.</p></details><details><summary>Is there a teacher app?</summary><p>A teacher app with roll call and timetables is in development. Ask us and we will tell you when it is ready.</p></details></div><div class="faq-group"><h2>Setting up</h2><details><summary>How do we get started?</summary><p>Arrange a meeting with us. After it, you register your school, we approve it, and your staff join with a private registration code.</p></details><details><summary>Can we use our existing class lists?</summary><p>Yes. Upload your class lists as CSV or Excel files. Names that look like duplicates are flagged so you can confirm or merge them before they are added.</p></details><details><summary>What does it cost?</summary><p>Contact us for pricing for your school. We will go through it with you after we meet.</p></details></div><div class="faq-group"><h2>Marks, reports and data</h2><details><summary>Who can see learners’ marks?</summary><p>Access depends on each person’s role. Teachers see the classes they teach, HODs see their department, and the head and admins see the whole school.</p></details><details><summary>How do report cards reach parents?</summary><p>Once the head approves a class, a PDF report card is created for every learner. You can print them or share them with parents.</p></details><details><summary>Can a class be sent back for changes?</summary><p>Yes. HODs and the head can return a class to the teacher with a note explaining what to fix. It comes back for review once it is updated.</p></details></div><div class="faq-group"><h2>Heritage Prestige Program</h2><details><summary>What does a member school get?</summary><p>The Delmar school platform, printed reports, support with HBC School Based Projects, Heritage Prestige School status and access to national aviation partners.</p></details><details><summary>Who runs the flights?</summary><p>All flights are run by licensed operators under CAAZ regulations.</p></details><details><summary>Does a learner need permission to take part?</summary><p>Yes. Every activity needs a parental consent form, and no learner flies without written parental consent. School staff are with every group.</p></details></div></div></section>
+  <section class="cta on-forest"><div class="wrap"><p>Still have a question?</p><a class="btn btn-green" href="#contact">Contact us</a></div></section>
+</div>
+
+<div class="view" data-view="privacy" data-title="Privacy policy – Delmar Technologies" hidden>
+  <section class="phead on-forest">
+    <div class="wrap">
+      <h1 class="wide">Privacy policy</h1>
+      <p class="lede">How Delmar Technologies collects, uses and protects information in InsightScholar and on this website.</p>
+      <p class="updated">Last updated 12 November 2026</p>
+    </div>
+    <svg class="wall wall-static" viewBox="0 0 1600 90" preserveAspectRatio="xMidYMax slice" aria-hidden="true" data-seed="529"></svg>
+  </section>
+  <section class="sec"><div class="wrap prose"><h2>Who we are</h2>
+        <p>Delmar Technologies (Pvt) Ltd (“Delmar”, “we”) is a company registered in Zimbabwe, based in Greystone Park, Harare. We provide InsightScholar and other software to schools and organisations.</p>
+        <h2>Information we handle</h2>
+        <p>When a school uses InsightScholar, we handle information on the school’s behalf, including:</p>
+        <ul><li><strong>School details</strong> such as the school’s name, forms, streams and subjects.</li><li><strong>Staff details</strong> such as names, contact details, roles and sign-in information.</li><li><strong>Learner records</strong> such as names, classes, marks, grades and teacher comments.</li></ul>
+        <p>When you contact us, we receive the details you choose to send, such as your name, school and phone number or email.</p>
+        <h2>How we use it</h2>
+        <p>We use this information to run InsightScholar for your school, to support your staff, to keep the service secure, and to reply to your enquiries. We do not sell personal information.</p>
+        <h2>Who can see it</h2>
+        <p>Inside InsightScholar, each person sees only what their role allows. Delmar staff access school data only when needed to provide or support the service.</p>
+        <h2>Your rights</h2>
+        <p>Schools, staff and parents can ask us what information we hold, ask us to correct it, or ask us to delete it where the law allows. We handle personal information in line with Zimbabwe’s Cyber and Data Protection Act.</p>
+        <h2>Contact</h2>
+        <p>For privacy questions, email info@delmartechnologies.co.zw or write to us at our Harare office.</p></div></section>
+</div>
+
+<div class="view" data-view="terms" data-title="Terms of use – Delmar Technologies" hidden>
+  <section class="phead on-forest">
+    <div class="wrap">
+      <h1 class="wide">Terms of use</h1>
+      <p class="lede">The basic terms for using InsightScholar and this website.</p>
+      <p class="updated">Last updated 12 November 2026</p>
+    </div>
+    <svg class="wall wall-static" viewBox="0 0 1600 90" preserveAspectRatio="xMidYMax slice" aria-hidden="true" data-seed="455"></svg>
+  </section>
+  <section class="sec"><div class="wrap prose"><h2>Using InsightScholar</h2>
+        <p>InsightScholar is provided to approved schools. Each school is responsible for who it invites, for the accuracy of the records it enters, and for keeping its registration codes private.</p>
+        <h2>Accounts</h2>
+        <p>Staff must use their own account and keep their sign-in details safe. Tell us straight away if you think an account has been used without permission.</p>
+        <h2>Your school’s data</h2>
+        <p>Your school’s records belong to your school. We use them only to provide and support the service, as described in our <a class="textlink" href="#privacy">privacy policy</a>.</p>
+        <h2>Availability and changes</h2>
+        <p>We work to keep InsightScholar available and to improve it over time. We may update features, and we will tell schools about changes that affect how they use the service.</p>
+        <h2>Agreements with schools</h2>
+        <p>A school’s subscription, pricing and support are set out in its agreement with Delmar. Where that agreement differs from these terms, the agreement applies.</p>
+        <h2>Governing law</h2>
+        <p>These terms are governed by the laws of Zimbabwe.</p>
+        <h2>Contact</h2>
+        <p>Questions about these terms can go to info@delmartechnologies.co.zw.</p></div></section>
+</div>
 </main>
 
-<footer>
+<footer class="foot">
   <div class="wrap">
-    <span>© 2026 Delmar Technologies (Pvt) Ltd</span>
-    <nav aria-label="Footer">
-      <a href="#heritage">Heritage Prestige</a><a href="#software">Software</a><a href="#company">Company</a><a href="#contact">Contact</a>
-    </nav>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#home" aria-label="Delmar Technologies home">
+          <svg viewBox="0 0 600 910" aria-hidden="true"><use href="#d-mark"/></svg>
+          <div><b>DELMAR</b><span>TECHNOLOGIES</span></div>
+        </a>
+        <p>Software and programs for Zimbabwean schools and institutions.</p>
+      </div>
+      <nav aria-labelledby="f-products"><h2 id="f-products">Products</h2><ul>
+        <li><a href="#software">InsightScholar</a></li>
+        <li><a href="#heritage">Heritage Prestige Program</a></li>
+        <li><a href="#software">Teacher app</a></li>
+        <li><a href="#software">LinkUp</a></li></ul></nav>
+      <nav aria-labelledby="f-company"><h2 id="f-company">Company</h2><ul>
+        <li><a href="#company">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li></ul></nav>
+      <nav aria-labelledby="f-legal"><h2 id="f-legal">Legal</h2><ul>
+        <li><a href="#privacy">Privacy policy</a></li>
+        <li><a href="#terms">Terms of use</a></li></ul></nav>
+      <div><h2>Get in touch</h2><ul>
+        <li><a href="tel:+263786270017">+263 786 270 017</a></li>
+        <li><a href="mailto:info@delmartechnologies.co.zw">info@delmartechnologies.co.zw</a></li>
+        <li>Greystone Park, Harare</li></ul></div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Delmar Technologies (Pvt) Ltd</span>
+      <span>delmartechnologies.co.zw</span>
+    </div>
   </div>
 </footer>
+
+<a class="wa" href="https://wa.me/263786270017" aria-label="Chat with Delmar on WhatsApp">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
+  <span>Chat on WhatsApp</span>
+</a>
 
 <script>
 (function(){
