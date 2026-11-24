@@ -2,1186 +2,547 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 910'><defs><linearGradient id='g' x1='0' y1='1' x2='1' y2='0'><stop offset='0' stop-color='%2319B3A5'/><stop offset='1' stop-color='%233CCB82'/></linearGradient></defs><g fill='url(%23g)'><path d='M270 370V910A270 270 0 0 1 270 370Z'/><path d='M600 0V630A280 280 0 0 1 320 910V280A280 280 0 0 1 600 0Z'/></g></svg>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Delmar Technologies</title>
-<meta name="description" content="Delmar Technologies builds software for Zimbabwean schools and organisations. Our first product is InsightScholar.">
-<meta property="og:title" content="Delmar Technologies">
-<meta property="og:description" content="InsightScholar: report cards and school records for Zimbabwean schools.">
-<meta name="theme-color" content="#040F0D">
+<meta name="description" content="Delmar Technologies is a Harare software company. We build school management software and run the Heritage Prestige Program for Zimbabwean schools.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 910'%3E%3Cpath fill='%23167A42' d='M270 370V910A270 270 0 0 1 270 370Z'/%3E%3Cpath fill='%23167A42' d='M600 0V630A280 280 0 0 1 320 910V280A280 280 0 0 1 600 0Z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&family=Schibsted+Grotesk:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@300;700&display=swap">
 <style>
-/* Layout: a dark, single-theme company site in eight hash-routed pages. Forest-night ground,
-   one teal-to-green light (the letterhead gradient) on the mark, primary actions and data bars.
-   Display type is a tight grotesk; the Montserrat wordmark stays as the logo lockup. */
+/* VOICE: formal, confident, for heads, associations and government departments
+   IDEA: a Great Zimbabwe dry-stone wall whose chevron course is also a runway's yellow chevrons
+   PICTURE: the wall across the hero, built course by course once on load
+   COLOUR and TYPE: forest, granite, Delmar green for actions, runway yellow for chevrons; Archivo wide + normal
+   LAYOUT: full-width bands stacked like stone courses, left aligned, ruled rows instead of cards */
 :root{
-  --bg:#040F0D;
-  --bg-2:#071714;
-  --surface:#0B211D;
-  --surface-2:#0F2A25;
-  --line:#17352F;
-  --line-2:#21463F;
-  --fg:#E8F1EC;
-  --muted:#A3B9B1;
-  --faint:#839C94;
-  --brand:#167A42;
-  --green:#3CCB82;
-  --teal:#19B3A5;
-  --amber:#E2B65A;
-  --wa:#25D366;
-  --grad:linear-gradient(115deg,var(--teal),var(--green));
-  --on-grad:#03130E;
-  --paper:#F3F6F4;
+  --forest:#0C332F;
+  --forest-2:#0F3B36;
+  --forest-3:#164A43;
+  --granite:#E3E6E1;
+  --stone:#CDD3CC;
+  --white:#F7F8F6;
   --ink:#0C2B27;
-  --f-display:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  --f-logo:"Montserrat",system-ui,sans-serif;
-  --ease-out:cubic-bezier(0.23,1,0.32,1);
-  --ease-in-out:cubic-bezier(0.77,0,0.175,1);
-  --wrap:1220px;
-  color-scheme:dark;
+  --muted:#4A5F5A;
+  --on-forest:#E8EFEB;
+  --on-forest-muted:#A5BCB4;
+  --green:#167A42;
+  --green-hover:#0F6234;
+  --green-on-forest:#3DBB72;
+  --yellow:#E9B10C;
+  --wrap:1240px;
+  --f:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 *{box-sizing:border-box}
-html{scrollbar-color:var(--line-2) var(--bg);accent-color:var(--green);caret-color:var(--green)}
-body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
-::selection{background:rgba(60,203,130,.3);color:var(--fg)}
-::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:10px;border:2px solid var(--bg)}
-a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1px}
-p{margin:0}
-h1,h2,h3,h4{font-family:var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.03em;font-weight:700}
-:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:8px}
-h1[tabindex="-1"]:focus,main:focus{outline:none}
-.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-@media (min-width:700px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
-.hl{color:var(--green)}
-.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;overflow-x:clip;background:var(--granite);color:var(--ink);font:400 17px/1.6 var(--f);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,p,ul,ol,dl,dd{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+img,svg{display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:clamp(20px,4vw,40px)}
+.wide{font-stretch:125%;font-weight:800;letter-spacing:-.015em;line-height:.98;text-wrap:balance}
+.skip{position:absolute;left:12px;top:-60px;background:var(--white);padding:10px 14px;border-radius:6px;z-index:100}
+.skip:focus{top:12px}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:4px}
+.on-forest :focus-visible{outline-color:var(--yellow)}
 
 /* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 15px/1 var(--f-body);text-decoration:none;border-radius:12px;padding:0 22px;min-height:50px;border:0;cursor:pointer;white-space:nowrap;transition:transform 160ms var(--ease-out),box-shadow 200ms ease,background-color 200ms ease;-webkit-tap-highlight-color:transparent}
-.btn:active{transform:scale(.97)}
-.btn-grad{background:var(--grad);color:var(--on-grad);box-shadow:0 1px 0 rgba(255,255,255,.2) inset,0 8px 18px -8px rgba(0,0,0,.7)}
-.btn-line{color:var(--fg);background:rgba(232,241,236,.04);box-shadow:inset 0 0 0 1px var(--line-2)}
-.btn-grad:focus-visible{outline-color:var(--fg)}
-.arr{flex:none;transition:transform 200ms var(--ease-out)}
-.wa-ic{color:var(--wa)}
-@media (hover:hover) and (pointer:fine){
-  .btn:hover{transform:translateY(-1px)}
-  .btn:active{transform:scale(.97)}
-  .btn-grad:hover{box-shadow:0 1px 0 rgba(255,255,255,.26) inset,0 12px 24px -8px rgba(0,0,0,.8)}
-  .btn-line:hover{box-shadow:inset 0 0 0 1px var(--muted)}
-  .btn:hover .arr,.tlink:hover .arr{transform:translateX(3px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:4px;font:600 16px/1 var(--f);text-decoration:none;cursor:pointer;border:0;transition:background-color .15s ease,box-shadow .15s ease}
+.btn:active{transform:translateY(1px)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-hover)}
+.on-forest .btn-green{background:var(--green-on-forest);color:#06231A}
+.on-forest .btn-green:hover{background:#56CC88}
+.btn-line{color:inherit;box-shadow:inset 0 0 0 1.5px currentColor;background:transparent}
+.btn-line:hover{background:color-mix(in srgb,currentColor 10%,transparent)}
+.textlink{color:var(--green);font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:40;background:var(--forest);color:var(--on-forest);border-bottom:1px solid var(--forest-3)}
+.nav .wrap{display:flex;align-items:center;gap:32px;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-right:auto}
+.brand svg{width:22px;height:auto;fill:var(--green-on-forest)}
+.brand b{display:block;font:700 16px/1 "Montserrat",var(--f);letter-spacing:.04em}
+.brand span{display:block;font:300 9.5px/1 "Montserrat",var(--f);letter-spacing:.24em;margin-top:4px}
+.nav ul{display:flex;gap:28px;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--on-forest-muted);padding-block:8px}
+.nav ul a:hover{color:var(--on-forest)}
+.nav .btn{min-height:42px;padding:0 18px;font-size:15px}
+.menu-btn{display:none;background:none;border:0;color:inherit;font:600 15px var(--f);min-height:44px;padding:0 4px;cursor:pointer}
+@media (max-width:880px){
+  .nav ul{display:none}
+  .nav .btn{display:none}
+  .menu-btn{display:block}
+  .nav.open ul{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:68px;background:var(--forest);padding:8px clamp(20px,4vw,40px) 20px;border-bottom:1px solid var(--forest-3)}
+  .nav.open ul a{display:block;padding:14px 0;font-size:18px;color:var(--on-forest);border-top:1px solid var(--forest-3)}
 }
-.tlink{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-weight:700;text-decoration:none;min-height:44px}
-.tlink span{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:2px;transition:background-size 240ms var(--ease-out)}
-@media (hover:hover) and (pointer:fine){.tlink:hover span{background-size:100% 1px}}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap}
 
-/* Skip link */
-.skip{position:fixed;left:calc(12px + env(safe-area-inset-left,0px));top:calc(12px + env(safe-area-inset-top,0px));z-index:100;background:var(--fg);color:var(--bg);font-weight:700;padding:12px 16px;border-radius:10px;text-decoration:none;transform:translateY(-180%);transition:transform 200ms var(--ease-out)}
-.skip:focus{transform:none}
+/* Hero */
+.hero{background:var(--forest);color:var(--on-forest);position:relative;overflow:hidden}
+.hero .wrap{padding-top:clamp(48px,7vw,96px);padding-bottom:clamp(36px,5vw,56px)}
+.hero h1{font-size:clamp(40px,6.6vw,96px);max-width:15ch}
+.hero-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 48px;align-items:end;margin-top:clamp(32px,4vw,48px)}
+.hero .lede{font-size:clamp(18px,1.6vw,20px);line-height:1.55;color:var(--on-forest-muted);max-width:54ch}
+.hero .lede strong{color:var(--on-forest);font-weight:600}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:820px){.hero-foot{grid-template-columns:1fr}}
 
-/* Header */
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(4,15,13,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-height:44px}
-.brand svg{width:22px;height:auto}
-.brand b{font:800 16px/1 var(--f-logo);letter-spacing:.06em;display:block}
-.brand span{font:400 11px/1 var(--f-logo);letter-spacing:.24em;display:block;margin-top:5px;color:var(--muted)}
-.mainnav{display:flex;gap:4px;list-style:none;margin:0;padding:0}
-.mainnav a{display:flex;align-items:center;min-height:44px;padding:0 14px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:600;font-size:14.5px;transition:color 150ms ease,background-color 150ms ease}
-.mainnav a[aria-current="page"]{color:var(--fg);background:var(--surface)}
-@media (hover:hover) and (pointer:fine){.mainnav a:hover{color:var(--fg)}}
-.top .btn{min-height:44px;padding:0 16px;font-size:14px;border-radius:10px}
-.menu-btn{display:none;width:44px;height:44px;border-radius:10px;border:1px solid var(--line-2);background:var(--surface);color:var(--fg);cursor:pointer;align-items:center;justify-content:center}
-.menu-btn svg{transition:transform 200ms var(--ease-out)}
-.top-actions{display:flex;gap:10px;align-items:center}
-@media (max-width:980px){.mainnav{display:none}.menu-btn{display:inline-flex}}
-@media (max-width:420px){.top .btn{display:none}}
-.drawer{position:fixed;inset:0;z-index:80;background:var(--bg);padding:calc(env(safe-area-inset-top,0px) + 12px) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) max(16px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:24px;transition:opacity 220ms var(--ease-out),transform 220ms var(--ease-out)}
-@starting-style{.drawer{opacity:0;transform:translateY(-8px)}}
-.drawer-head{display:flex;justify-content:space-between;align-items:center}
-.drawer nav{display:flex;flex-direction:column}
-.drawer nav a{font:700 30px/1.15 var(--f-display);letter-spacing:-.03em;text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);color:var(--muted)}
-.drawer nav a[aria-current="page"]{color:var(--fg)}
-.drawer .btn{width:100%}
+/* The wall */
+.wall{display:block;width:100%;height:clamp(120px,15vw,200px)}
+.wall .course{transform-box:fill-box;animation:lay .55s cubic-bezier(.2,.75,.25,1) both}
+.wall .chev{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 1s .7s cubic-bezier(.45,.05,.25,1) forwards}
+@keyframes lay{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .wall .course{animation:none}
+  .wall .chev{animation:none;stroke-dashoffset:0}
+  .btn{transition:none}
+}
 
-/* Views */
-main{display:block}
-.view{animation:viewIn 260ms var(--ease-out) both}
-@keyframes viewIn{from{opacity:.4;transform:translateY(8px)}to{opacity:1;transform:none}}
-section.band{padding-block:112px}
-section.band.tight{padding-block:80px}
-.sec-head{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:56px}
-.sec-head h2{font-size:clamp(34px,4.4vw,58px);line-height:1.02}
-.sec-head p{color:var(--muted);font-size:17.5px;max-width:48ch}
-@media (max-width:880px){.sec-head{grid-template-columns:1fr;gap:16px;margin-bottom:40px}section.band{padding-block:76px}section.band.tight{padding-block:60px}}
-.rule{border-top:1px solid var(--line)}
+/* Register strip */
+.register{border-bottom:1px solid var(--stone)}
+.register dl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.register dl > div{padding:22px 24px 24px 0;border-right:1px solid var(--stone);margin-right:24px}
+.register dl > div:last-child{border-right:0;margin-right:0}
+.register dt{font-size:14px;color:var(--muted)}
+.register dd{font-weight:600;font-size:16.5px;line-height:1.35;margin-top:4px}
+@media (max-width:900px){.register dl{grid-template-columns:1fr 1fr}.register dl > div:nth-child(2){border-right:0;margin-right:0}.register dl > div:nth-child(-n+2){border-bottom:1px solid var(--stone)}}
+@media (max-width:480px){.register dl{grid-template-columns:1fr}.register dl > div{border-right:0;margin-right:0;border-bottom:1px solid var(--stone)}.register dl > div:last-child{border-bottom:0}}
 
-/* Page hero (inner pages) */
-.phero{position:relative;isolation:isolate;padding-block:96px 72px;border-bottom:1px solid var(--line)}
-.phero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(700px 360px at 85% 0%,rgba(25,179,165,.14),transparent 70%),radial-gradient(600px 320px at 10% 100%,rgba(22,122,66,.18),transparent 70%)}
-.phero .crumb{font-weight:700;font-size:14px;color:var(--green);margin-bottom:18px;display:flex;gap:10px;align-items:center}
-.phero h1{font-size:clamp(42px,6vw,84px);line-height:.98;letter-spacing:-.04em;max-width:16ch}
-.phero .lede{margin-top:24px;font-size:19px;color:var(--muted);max-width:56ch}
-.phero .cta-row{margin-top:32px}
-@media (max-width:700px){.phero{padding-block:64px 48px}.phero .lede{font-size:17px}}
+/* Sections */
+.sec{padding-block:clamp(72px,9vw,128px)}
+.sec-title{font-size:clamp(34px,4.6vw,60px);max-width:16ch}
+.intro{font-size:19px;color:var(--muted);max-width:56ch;margin-top:20px}
 
-/* Home hero */
-.hero{position:relative;isolation:isolate;padding-block:96px 0}
-.hero::before{content:"";position:absolute;inset:-140px 0 auto;height:900px;z-index:-1;background:radial-gradient(640px 400px at 80% 16%,rgba(25,179,165,.20),transparent 70%),radial-gradient(560px 360px at 15% 60%,rgba(22,122,66,.24),transparent 70%)}
-.hero-top{display:grid;grid-template-columns:1.3fr .7fr;gap:56px;align-items:end}
-.hero h1{font-size:clamp(44px,6.8vw,96px);line-height:.95;letter-spacing:-.045em;font-weight:800}
-.hero .lede{font-size:18px;color:var(--muted);max-width:44ch}
-.hero .cta-row{margin-top:28px}
-.status-line{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);margin-top:24px}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--green);flex:none}
-.enter{animation:enter 700ms var(--ease-out) both;animation-delay:calc(var(--d,0) * 70ms)}
-@keyframes enter{from{transform:translateY(14px);filter:blur(4px)}to{transform:none;filter:none}}
-@media (max-width:920px){.hero-top{grid-template-columns:1fr;gap:24px}.hero{padding-block:56px 0}}
+/* Courses (what we do) */
+.courses{margin-top:clamp(40px,5vw,64px);border-top:3px solid var(--ink)}
+.courses li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:16px 48px;padding:32px 0 36px;border-bottom:1px solid var(--stone)}
+.courses li:last-child{border-bottom:3px solid var(--ink)}
+.courses h3{font-size:clamp(28px,3.4vw,44px)}
+.courses p{max-width:56ch}
+.courses .more{display:inline-block;margin-top:14px}
+@media (max-width:760px){.courses li{grid-template-columns:1fr}}
 
-/* Product window */
-.window{margin-top:64px;border-radius:20px;border:1px solid transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(160deg,rgba(25,179,165,.6),var(--line) 40%,rgba(60,203,130,.4)) border-box;box-shadow:0 2px 4px rgba(0,0,0,.3),0 40px 90px -30px rgba(0,0,0,.85);overflow:hidden;animation:rise 900ms 200ms var(--ease-out) both}
-@keyframes rise{from{transform:translateY(24px)}to{transform:none}}
-.chrome{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--bg-2)}
-.chrome i{width:10px;height:10px;border-radius:50%;background:var(--line-2);display:inline-block;margin-right:6px}
-.chrome .addr{flex:1;max-width:420px;margin:0 auto;text-align:center;font:400 12px var(--f-mono);color:var(--faint);background:var(--surface);border-radius:8px;padding:6px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.app{display:grid;grid-template-columns:210px 1fr}
-.side{border-right:1px solid var(--line);padding:18px 12px;display:flex;flex-direction:column;gap:2px;font-size:13.5px}
-.side .school{padding:6px 10px 16px;border-bottom:1px solid var(--line);margin-bottom:10px}
-.side .school b{display:block;font:600 13.5px var(--f-display)}
-.side .school small{color:var(--faint);font-size:11.5px}
-.side span{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;color:var(--muted)}
-.side span::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--line-2);flex:none}
-.side span.on{background:var(--surface-2);color:var(--fg)}
-.side span.on::before{background:var(--grad)}
-.mainp{padding:22px;min-width:0}
-.mhead{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap}
-.mhead b{display:block;font:700 19px/1.3 var(--f-display);letter-spacing:-.02em}
-.mhead p{color:var(--faint);font:400 12px var(--f-mono);margin-top:4px}
-.chip{font:600 11.5px/1 var(--f-body);padding:6px 9px;border-radius:999px;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
-.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
-.chip.ok{color:var(--green);background:rgba(60,203,130,.1)}
-.chip.wait{color:var(--amber);background:rgba(226,182,90,.1)}
-.chip.idle{color:var(--muted);background:rgba(163,185,177,.1)}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
-.kpi{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:14px}
-.kpi small{display:block;color:var(--faint);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
-.kpi b{display:block;font:700 26px/1.1 var(--f-display);margin-top:8px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.kpi span{font-size:12px;color:var(--muted)}
-.split2{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;margin-top:12px}
-.pane{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
-.pane .ph{margin:0 0 6px;font:600 13px var(--f-display);display:flex;justify-content:space-between;gap:8px}
-.pane .ph small{font-size:11px;color:var(--faint);font-family:var(--f-body)}
-.rows{list-style:none;margin:0;padding:0}
-.rows li{display:grid;grid-template-columns:96px 1fr 40px 98px;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
-.rows li:last-child{border-bottom:0}
-.bar{height:5px;background:var(--line);border-radius:5px;overflow:hidden}
-.bar span{display:block;height:100%;background:var(--grad);border-radius:5px;transform-origin:left;animation:grow 900ms var(--ease-out) both;animation-delay:calc(450ms + var(--i,0) * 60ms)}
-.rows li:nth-child(2) .bar span{--i:1}.rows li:nth-child(3) .bar span{--i:2}.rows li:nth-child(4) .bar span{--i:3}
-.pct{font:500 12px var(--f-mono);text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
-.rows .chip{justify-self:end}
-.cols{display:flex;align-items:flex-end;gap:10px;height:132px;padding-top:12px;border-bottom:1px solid var(--line)}
-.cols div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;height:100%}
-.cols i{display:block;width:100%;max-width:28px;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,var(--green),rgba(25,179,165,.35));transform-origin:bottom;animation:growY 800ms var(--ease-out) both;animation-delay:calc(550ms + var(--i,0) * 50ms)}
-.cols div:nth-child(2) i{--i:1}.cols div:nth-child(3) i{--i:2}.cols div:nth-child(4) i{--i:3}.cols div:nth-child(5) i{--i:4}
-.cols em{font:500 10.5px var(--f-mono);font-style:normal;color:var(--muted)}
-.colx{display:flex;gap:10px;margin-top:8px}
-.colx span{flex:1;text-align:center;font-size:10.5px;color:var(--faint)}
-@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-@keyframes growY{from{transform:scaleY(0)}to{transform:scaleY(1)}}
-@media (max-width:1000px){.app{grid-template-columns:1fr}.side{display:none}.split2{grid-template-columns:1fr}}
-@media (max-width:640px){.kpis{grid-template-columns:1fr 1fr}.rows li{grid-template-columns:1fr 38px 92px}.rows li .bar{display:none}.mainp{padding:16px}.window{margin-top:44px}}
-.fade-ground{height:120px;background:linear-gradient(180deg,transparent,var(--bg));margin-top:-60px;position:relative}
+/* Programme */
+.programme{background:var(--forest);color:var(--on-forest)}
+.prog-top{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px 64px;align-items:end}
+.prog-top h2{font-size:clamp(38px,5.6vw,76px)}
+.prog-top .tagline{font-style:italic;font-size:clamp(20px,2vw,24px);margin-top:20px;color:var(--yellow)}
+.prog-top .by{margin-top:10px;color:var(--on-forest-muted);font-size:15px}
+.prog-top .mission{color:var(--on-forest-muted)}
+.prog-top .mission strong{color:var(--on-forest);font-weight:600}
+@media (max-width:900px){.prog-top{grid-template-columns:1fr}}
 
-/* Fact strip */
-.facts-strip{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}
-.facts-strip div{padding:26px 24px 26px 0;min-width:0}
-.facts-strip div + div{padding-left:24px;border-left:1px solid var(--line)}
-.facts-strip b{display:block;font:700 22px/1.15 var(--f-display);letter-spacing:-.02em}
-.facts-strip span{display:block;color:var(--muted);font-size:14.5px;margin-top:6px}
-@media (max-width:880px){.facts-strip{grid-template-columns:1fr 1fr}.facts-strip div:nth-child(3){padding-left:0;border-left:0}.facts-strip div:nth-child(n+3){border-top:1px solid var(--line)}}
-@media (max-width:480px){.facts-strip{grid-template-columns:1fr}.facts-strip div{padding-left:0!important;border-left:0!important}.facts-strip div + div{border-top:1px solid var(--line)}}
+.pieces{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 64px;margin-top:clamp(56px,7vw,96px);padding-top:40px;border-top:1px solid var(--forest-3)}
+.pieces .big{color:var(--on-forest);font-size:clamp(26px,3vw,38px);font-stretch:112%;font-weight:700;line-height:1.12;letter-spacing:-.01em}
+.pieces p{color:var(--on-forest-muted);max-width:60ch}
+.pieces p + p{margin-top:14px}
+@media (max-width:900px){.pieces{grid-template-columns:1fr}}
 
-/* Split blocks */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.split.top{align-items:start}
-.split > *{min-width:0}
-.split h2{font-size:clamp(32px,4vw,52px);line-height:1.03}
-.split .body{color:var(--muted);font-size:17px;margin-top:20px;max-width:52ch}
-.split .cta-row{margin-top:28px}
-@media (max-width:900px){.split{grid-template-columns:1fr;gap:40px}}
-.ticks{list-style:none;margin:28px 0 0;padding:0}
-.ticks li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--line)}
-.ticks li svg{color:var(--green);margin-top:3px}
-.ticks b{display:block;font-weight:700}
-.ticks span{color:var(--muted);font-size:15px}
+/* Route: a real sequence */
+.route-wrap{margin-top:clamp(56px,7vw,88px)}
+.route-label{font-size:15px;color:var(--on-forest-muted);margin-bottom:28px}
+.route{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));position:relative}
+.route::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:repeating-linear-gradient(90deg,var(--yellow) 0 22px,transparent 22px 34px)}
+.route li{position:relative;padding-top:40px;padding-right:16px}
+.route li::before{content:"";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--forest);box-shadow:inset 0 0 0 3px var(--yellow)}
+.route li:last-child::before{background:var(--yellow)}
+.route b{display:block;font-size:18px;font-weight:700;line-height:1.25}
+.route span{display:block;font-size:14.5px;color:var(--on-forest-muted);margin-top:6px;line-height:1.45}
+@media (max-width:900px){
+  .route{grid-template-columns:1fr;padding-left:36px}
+  .route::before{left:9px;right:auto;top:0;bottom:0;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--yellow) 0 18px,transparent 18px 28px)}
+  .route li{padding:0 0 28px}
+  .route li::before{left:-36px;top:2px}
+}
 
-/* Feature explorer */
-.explorer{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
-.tabs{display:flex;flex-direction:column;gap:6px}
-.tab{all:unset;cursor:pointer;display:block;padding:18px 20px;border-radius:14px;border:1px solid transparent;transition:background-color 150ms ease,border-color 150ms ease,transform 160ms var(--ease-out);-webkit-tap-highlight-color:transparent}
-.tab:active{transform:scale(.98)}
-.tab b{display:block;font:700 18px var(--f-display);letter-spacing:-.02em;color:var(--muted);transition:color 150ms ease}
-.tab span{display:block;font-size:14.5px;color:var(--faint);margin-top:4px;max-width:46ch}
-@media (hover:hover) and (pointer:fine){.tab:hover b{color:var(--fg)}}
-.tab[aria-selected="true"]{background:var(--surface);border-color:var(--line)}
-.tab[aria-selected="true"] b{color:var(--fg)}
-.tab[aria-selected="true"] span{color:var(--muted)}
-.tab:focus-visible{outline:2px solid var(--green);outline-offset:2px}
-.stage{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px;min-height:440px;position:relative;overflow:hidden;min-width:0}
-.stage::before{content:"";position:absolute;inset:auto -80px -120px auto;width:340px;height:340px;background:radial-gradient(circle,rgba(25,179,165,.16),transparent 65%);pointer-events:none}
-.sv{position:relative;animation:svIn 200ms var(--ease-out) both}
-@keyframes svIn{from{opacity:.5;filter:blur(2px)}to{opacity:1;filter:none}}
-.vh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--line);margin-bottom:6px}
-.vh b{font:700 16px var(--f-display)}
-.vh small{font:400 12px var(--f-mono);color:var(--faint);display:block}
-.terms3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
-.term{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:16px}
-.term small{font-weight:600;font-size:11px;color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
-.term b{display:block;font:700 18px var(--f-display);margin:6px 0 10px}
-.term.now{border-color:rgba(60,203,130,.5)}
-.dl{list-style:none;margin:16px 0 0;padding:0}
-.dl li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
-.dl li span:last-child{font:500 13px var(--f-mono);color:var(--muted);text-align:right}
-.chain{display:flex;flex-direction:column;margin-top:16px}
-.step{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:center;padding:14px 0;position:relative}
-.step + .step::before{content:"";position:absolute;left:16px;top:-14px;height:28px;width:1px;background:var(--line-2)}
-.step .sd{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--bg-2);border:1px solid var(--line-2);font:600 12px var(--f-mono);color:var(--muted)}
-.step.done .sd{background:var(--grad);color:var(--on-grad);border:0}
-.step b{display:block;font-size:15px}
-.step small{color:var(--faint);font-size:13px}
-.note{margin-top:14px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--muted);display:flex;gap:10px}
-.note::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c,var(--amber));flex:none;margin-top:7px}
-.file{display:flex;gap:14px;align-items:center;background:var(--bg-2);border:1px dashed var(--line-2);border-radius:12px;padding:16px;margin-top:16px}
-.file .ic{width:40px;height:48px;border-radius:6px;background:var(--grad);color:var(--on-grad);display:grid;place-items:center;font:600 10px var(--f-mono);flex:none}
-.file b{display:block;font-size:14.5px;overflow-wrap:anywhere}
-.file small{color:var(--faint);font:400 12px var(--f-mono)}
-.match{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
-.match span:nth-child(2){font:500 11px var(--f-mono);color:var(--amber)}
-.match span:last-child{text-align:right}
-.hbar{display:grid;grid-template-columns:110px 1fr 44px;gap:12px;align-items:center;padding:9px 0;font-size:14px}
-.hbar .bar{height:8px}
-.stage .bar span{animation:none}
-@media (max-width:920px){.explorer{grid-template-columns:1fr}.tabs{flex-direction:row;overflow-x:auto;gap:8px;padding-bottom:4px;scrollbar-width:none}.tab{flex:none;padding:12px 16px;border-color:var(--line)}.tab span{display:none}.tab b{font-size:15px}.stage{min-height:0;padding:18px}.terms3{grid-template-columns:1fr}}
+/* Pillars as stacked courses */
+.pillars{margin-top:clamp(56px,7vw,96px)}
+.pillars > h3{font-size:clamp(26px,3vw,36px);font-stretch:112%;font-weight:700;letter-spacing:-.01em}
+.pillar-rows{margin-top:24px;border-top:2px solid var(--on-forest)}
+.pillar-rows > li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:12px 64px;padding:28px 0;border-bottom:1px solid var(--forest-3)}
+.pillar-rows h4{margin:0;font-size:22px;font-weight:700;line-height:1.25}
+.pillar-rows ul{display:flex;flex-wrap:wrap;gap:8px}
+.pillar-rows ul li{border:1px solid var(--forest-3);background:var(--forest-2);border-radius:4px;padding:6px 12px;font-size:15.5px}
+.pillar-rows .partners{flex-basis:100%;margin-top:10px;font-size:15px;color:var(--on-forest-muted);border:0;background:none;padding:0}
+@media (max-width:760px){.pillar-rows > li{grid-template-columns:1fr}}
 
-/* Report card */
-.rc{background:var(--paper);color:var(--ink);border-radius:14px;padding:22px;font-size:13.5px;box-shadow:0 2px 4px rgba(0,0,0,.3),0 40px 70px -30px rgba(0,0,0,.9)}
-.rc-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:2px solid var(--brand);padding-bottom:12px;margin-bottom:8px}
-.rc-top b{font:700 15px var(--f-display);letter-spacing:-.01em}
-.rc-top small{display:block;color:#4F6560;font:400 11.5px var(--f-mono)}
-.rc table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-.rc th{text-align:left;font-weight:700;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#4F6560;padding:7px 0;border-bottom:1px solid #D3DCD5}
-.rc td{padding:8px 0;border-bottom:1px solid #E3E9E5}
-.rc td:nth-child(n+2),.rc th:nth-child(n+2){text-align:center;width:64px}
-.rc .cm{margin-top:12px;font-style:italic;color:#2C4540}
-.rc .sig{display:flex;justify-content:space-between;gap:12px;margin-top:16px;padding-top:12px;border-top:1px dashed #C9D4CD;font-size:12px;color:#4F6560}
-.rc .sig b{display:block;color:var(--ink);font-size:13px}
+.membership{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px 64px;margin-top:clamp(56px,7vw,88px);align-items:start}
+.membership h3{font-size:clamp(26px,3vw,36px);font-stretch:112%;font-weight:700;letter-spacing:-.01em}
+.membership ul{columns:2;column-gap:40px}
+.membership li{break-inside:avoid;padding:12px 0;border-top:1px solid var(--forest-3);font-size:17px}
+.prog-cta{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;margin-top:48px}
+.prog-cta p{font-size:20px;font-weight:600}
+@media (max-width:900px){.membership{grid-template-columns:1fr}}
+@media (max-width:560px){.membership ul{columns:1}}
 
-/* Products */
-.products{display:grid;grid-template-columns:1.5fr 1fr;gap:16px}
-.prod{border-radius:20px;padding:34px;display:flex;flex-direction:column;gap:14px;min-width:0;background:var(--surface);border:1px solid var(--line)}
-.prod.lead{grid-row:span 2;border:1px solid transparent;background:radial-gradient(520px 320px at 100% 0%,rgba(25,179,165,.14),transparent 70%) padding-box,linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(150deg,rgba(25,179,165,.55),var(--line) 45%,rgba(60,203,130,.4)) border-box}
-.prod h3{font-size:32px;letter-spacing:-.035em}
-.prod.small h3{font-size:24px}
-.prod p{color:var(--muted)}
-.status{font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px}
-.status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
-.feat{list-style:none;padding:0;margin:6px 0 10px;display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
-.feat li{padding:12px 0;border-top:1px solid var(--line);font-size:15px;display:flex;gap:10px;align-items:baseline}
-.feat li::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--grad);flex:none;transform:translateY(-2px)}
-.prod.lead .cta-row{margin-top:auto}
-.prod .tlink{margin-top:auto;align-self:flex-start}
-@media (max-width:880px){.products{grid-template-columns:1fr}.prod.lead{grid-row:auto}.feat{grid-template-columns:1fr}.prod{padding:24px}}
+/* Safety + alignment */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px 72px}
+.two h2{font-size:clamp(28px,3.2vw,40px);max-width:18ch}
+.two .intro{font-size:17px;margin-top:14px}
+.ticks{margin-top:28px;border-top:2px solid var(--ink)}
+.ticks li{padding:14px 0 14px 34px;border-bottom:1px solid var(--stone);position:relative}
+.ticks li::before{content:"";position:absolute;left:2px;top:22px;width:14px;height:8px;border-left:2.5px solid var(--green);border-bottom:2.5px solid var(--green);transform:rotate(-45deg)}
+.ticks li strong{font-weight:600}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
 
-/* Process */
-.process{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,1fr);gap:20px;counter-reset:s}
-.process li{counter-increment:s;min-width:0;padding-top:22px;border-top:1px solid var(--line);position:relative}
-.process li::after{content:"";position:absolute;top:-1px;left:0;width:40px;height:1px;background:var(--grad)}
-.process li::before{content:counter(s,decimal-leading-zero);font:500 12px var(--f-mono);color:var(--green);display:block;margin-bottom:22px}
-.process h3{font-size:19px;margin-bottom:8px;letter-spacing:-.02em}
-.process p{font-size:14.5px;color:var(--muted)}
-@media (max-width:1000px){.process{grid-template-columns:1fr 1fr;gap:32px 20px}}
-@media (max-width:540px){.process{grid-template-columns:1fr}.process li::before{margin-bottom:10px}}
+/* Platforms */
+.platforms{background:var(--white);border-block:1px solid var(--stone)}
+.plat{margin-top:clamp(40px,5vw,56px);border-top:3px solid var(--ink)}
+.plat > li{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr) minmax(0,2fr);gap:12px 40px;padding:32px 0;border-bottom:1px solid var(--stone);align-items:start}
+.plat h3{font-size:clamp(24px,2.6vw,32px);font-stretch:112%;font-weight:700;letter-spacing:-.01em;line-height:1.1}
+.plat .note{display:block;font-size:14.5px;color:var(--muted);margin-top:8px;font-weight:400;font-stretch:100%;letter-spacing:0}
+.plat p{max-width:58ch}
+.status{justify-self:end;display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;white-space:nowrap}
+.status::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--green)}
+.status.dev::before{background:transparent;box-shadow:inset 0 0 0 2px var(--green)}
+.status.next::before{background:transparent;box-shadow:inset 0 0 0 2px var(--muted)}
+.status.next{color:var(--muted)}
+@media (max-width:860px){.plat > li{grid-template-columns:1fr}.status{justify-self:start;order:-1}}
 
-/* Statement */
-.statement{font:700 clamp(30px,4.4vw,60px)/1.06 var(--f-display);letter-spacing:-.04em;max-width:20ch}
-.statement .dim{color:var(--faint)}
-
-/* Roles table */
-.roles{display:grid;border-top:1px solid var(--line)}
-.role{display:grid;grid-template-columns:220px 1fr 1fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--line);align-items:start}
-.role h3{font-size:24px;letter-spacing:-.03em}
-.role p{color:var(--muted)}
-.role ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:15px}
-.role li{display:flex;gap:10px;align-items:baseline}
-.role li::before{content:"";width:6px;height:6px;border-radius:2px;background:var(--grad);flex:none;transform:translateY(-2px)}
-@media (max-width:880px){.role{grid-template-columns:1fr;gap:12px}}
-
-/* Principles */
-.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.pillar{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;min-width:0}
-.pillar .pn{font:500 12px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
-.pillar h3{font-size:20px;letter-spacing:-.02em;line-height:1.2;margin-top:10px}
-.pillar .ticks{margin-top:18px}
-@media (max-width:1060px){.pillars{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.pillars{grid-template-columns:1fr}}
-.principles{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
-.principle{padding:28px 0;border-top:1px solid var(--line)}
-.principle h3{font-size:22px;letter-spacing:-.025em;margin-bottom:8px}
-.principle p{color:var(--muted);max-width:48ch}
-@media (max-width:760px){.principles{grid-template-columns:1fr}}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;margin:0}
-.facts div{padding:18px 0;border-top:1px solid var(--line)}
-.facts dt{font-weight:600;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
-.facts dd{margin:6px 0 0;font:700 17px var(--f-display);letter-spacing:-.015em}
-
-/* FAQ */
-.faq{border-top:1px solid var(--line)}
-.faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font:700 clamp(18px,2vw,22px)/1.3 var(--f-display);letter-spacing:-.02em;min-height:44px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary .pm{flex:none;width:32px;height:32px;border-radius:50%;border:1px solid var(--line-2);display:grid;place-items:center;color:var(--green);transition:transform 220ms var(--ease-out),background-color 150ms ease}
-.faq details[open] summary .pm{transform:rotate(45deg);background:var(--surface)}
-.faq .ans{padding:0 56px 26px 0;color:var(--muted);max-width:70ch;font-size:16.5px}
-.faq .ans p + p{margin-top:12px}
-.faq-group{margin-top:56px}
-.faq-group:first-child{margin-top:0}
-.faq-group h2{font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--green);font-family:var(--f-body);font-weight:700;margin-bottom:8px}
-
-/* CTA band */
-.ctaband{position:relative;isolation:isolate;border-top:1px solid var(--line);overflow:hidden}
-.ctaband::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(700px 380px at 12% 40%,rgba(22,122,66,.24),transparent 70%),radial-gradient(520px 360px at 92% 80%,rgba(25,179,165,.14),transparent 70%)}
-.ctaband .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end;padding-block:104px}
-.ctaband h2{font-size:clamp(36px,5vw,68px);line-height:1;letter-spacing:-.04em}
-.ctaband p{color:var(--muted);font-size:17.5px;margin-bottom:24px;max-width:40ch}
-@media (max-width:860px){.ctaband .wrap{grid-template-columns:1fr;padding-block:72px}}
+/* Company */
+.company{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:40px 72px;align-items:start}
+.company .big{font-size:clamp(30px,3.8vw,50px)}
+.company p{color:var(--muted);max-width:56ch}
+.company p + p{margin-top:16px}
+.facts{margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
+.facts div{padding:16px 0;border-top:1px solid var(--stone)}
+.facts dt{font-size:14px;color:var(--muted)}
+.facts dd{font-weight:600;font-size:17px;margin-top:2px}
+@media (max-width:860px){.company{grid-template-columns:1fr}}
+@media (max-width:480px){.facts{grid-template-columns:1fr}}
 
 /* Contact */
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-.ways{display:grid;gap:10px}
-.way{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;border-radius:14px;background:rgba(232,241,236,.03);border:1px solid var(--line);min-width:0}
-.way small{display:block;font-weight:600;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
-.way span{font-weight:700;overflow-wrap:anywhere;user-select:all}
-.way .acts{display:flex;gap:8px;flex:none;flex-wrap:wrap;justify-content:flex-end}
-.mini{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;font:700 13px var(--f-body);color:var(--fg);background:var(--surface-2);border:1px solid var(--line-2);border-radius:10px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:transform 160ms var(--ease-out),border-color 150ms ease,filter 180ms ease,opacity 180ms ease;-webkit-tap-highlight-color:transparent}
-.mini:active{transform:scale(.97)}
-.mini.swap{filter:blur(2px);opacity:.6}
-.mini.wa{background:var(--wa);color:#062A16;border:0}
-.mini.copy{min-width:76px}
-@media (hover:hover) and (pointer:fine){.mini:hover{border-color:var(--muted)}}
-form.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px;min-width:0}
-form.card h2{grid-column:1/-1;font-size:24px;letter-spacing:-.025em}
-form.card .hint{grid-column:1/-1;color:var(--muted);font-size:14.5px;margin-top:-8px}
-.field{display:flex;flex-direction:column;gap:7px;min-width:0}
-.field.full{grid-column:1/-1}
-label{font:600 13.5px var(--f-body);color:var(--muted)}
-.opt{color:var(--faint);font-weight:500}
-input,select,textarea{font:500 16px var(--f-body);color:var(--fg);background:var(--bg-2);border:1px solid var(--line-2);border-radius:10px;padding:12px 14px;width:100%;min-height:48px;transition:border-color 150ms ease,box-shadow 150ms ease}
-textarea{resize:vertical;min-height:110px}
-input::placeholder,textarea::placeholder{color:var(--faint)}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(25,179,165,.22)}
-input[aria-invalid="true"]{border-color:#F08A7A}
-.err{font-size:13px;color:#F4A193}
-.err:empty{display:none}
-form.card .btn{grid-column:1/-1}
-.ready{grid-column:1/-1;background:var(--bg-2);border:1px solid rgba(60,203,130,.4);border-radius:14px;padding:18px;display:grid;gap:12px;transition:opacity 280ms var(--ease-out),transform 280ms var(--ease-out)}
-.ready[hidden]{display:none}
-@starting-style{.ready{opacity:0;transform:translateY(8px)}}
-.ready b{font:700 16px var(--f-display)}
-.ready pre{margin:0;white-space:pre-wrap;font:400 13px/1.55 var(--f-mono);color:var(--muted);max-height:200px;overflow:auto;background:var(--bg);border-radius:8px;padding:12px}
-.ready .acts{display:flex;gap:8px;flex-wrap:wrap}
-.ready .small{font-size:13.5px;color:var(--faint)}
-@media (max-width:920px){.contact-grid{grid-template-columns:1fr}form.card{grid-template-columns:1fr;padding:22px}}
+.contact{background:var(--forest);color:var(--on-forest)}
+.contact .wall{height:clamp(70px,8vw,110px);transform:scaleY(-1)}
+.contact .wall .course{animation:none}
+.contact .wrap{padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(64px,8vw,112px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px 72px;align-items:end}
+.contact h2{font-size:clamp(40px,6vw,84px)}
+.contact .sub{color:var(--on-forest-muted);font-size:19px;max-width:48ch;margin-top:24px}
+.contact .actions{margin-top:32px}
+.lines li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--forest-3)}
+.lines li:last-child{border-bottom:1px solid var(--forest-3)}
+.lines small{display:block;font-size:14px;color:var(--on-forest-muted)}
+.lines a,.lines span{font-weight:600;font-size:17px;text-decoration:none;overflow-wrap:anywhere}
+.lines a:hover{text-decoration:underline;text-underline-offset:4px}
+.copy{flex:none;background:none;border:0;color:var(--on-forest);font:600 14.5px var(--f);text-decoration:underline;text-underline-offset:4px;cursor:pointer;min-height:44px;padding:0 4px}
+@media (max-width:900px){.contact .wrap{grid-template-columns:1fr}}
 
-/* Legal */
-.legal{display:grid;grid-template-columns:240px 1fr;gap:64px;align-items:start}
-.legal nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 96px);display:flex;flex-direction:column;gap:2px;font-size:14.5px}
-.legal nav b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
-.legal nav a{color:var(--muted);text-decoration:none;padding:8px 0}
-.legal nav a[aria-current="page"]{color:var(--fg);font-weight:700}
-.prose{max-width:70ch;min-width:0}
-.prose h2{font-size:26px;letter-spacing:-.025em;margin:44px 0 12px}
-.prose h2:first-child{margin-top:0}
-.prose p,.prose li{color:var(--muted);font-size:16.5px}
-.prose p + p{margin-top:14px}
-.prose ul{padding-left:20px;margin:12px 0 0;display:grid;gap:8px}
-.prose strong{color:var(--fg)}
-.updated{font:400 13px var(--f-mono);color:var(--faint);margin-top:18px}
-@media (max-width:860px){.legal{grid-template-columns:1fr;gap:32px}.legal nav{position:static;flex-direction:row;gap:20px}.legal nav b{display:none}}
-
-/* Footer */
-footer{border-top:1px solid var(--line);padding-block:72px 40px;font-size:14.5px}
-.fgrid{display:grid;grid-template-columns:1.4fr repeat(3,1fr) 1.3fr;gap:40px}
-.fgrid > div{min-width:0}
-.fgrid h2{font:700 12px var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
-.fgrid ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
-.fgrid ul a{color:var(--muted);text-decoration:none;display:inline-flex;min-height:36px;align-items:center}
-@media (hover:hover) and (pointer:fine){.fgrid ul a:hover{color:var(--fg)}}
-.fgrid p{color:var(--muted);margin-top:16px;max-width:30ch}
-.fcontact{color:var(--muted);display:grid;gap:10px}
-.fcontact span{overflow-wrap:anywhere}
-.fbase{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--faint);font-size:13.5px}
-@media (max-width:960px){.fgrid{grid-template-columns:1fr 1fr}.fgrid > div:first-child,.fgrid > div:last-child{grid-column:1/-1}}
-
-/* Floating WhatsApp */
-.fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;align-items:center;gap:10px;background:var(--wa);color:#062A16;text-decoration:none;font:700 14px var(--f-body);min-height:52px;padding:0 18px 0 14px;border-radius:999px;box-shadow:0 1px 0 rgba(255,255,255,.2) inset,0 10px 24px -8px rgba(0,0,0,.8);transition:transform 160ms var(--ease-out),box-shadow 200ms ease}
-.fab:active{transform:scale(.96)}
-.fab:focus-visible{outline-color:var(--fg)}
-@media (max-width:560px){.fab span{display:none}.fab{padding:0;width:52px;justify-content:center}}
-
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:1ms!important;animation-delay:0ms!important;transition-property:opacity,color,background-color,border-color!important}}
+footer{background:var(--forest);color:var(--on-forest-muted);border-top:1px solid var(--forest-3);font-size:14.5px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center;padding-block:28px}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 24px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--on-forest)}
 </style>
-<style>[hidden]{display:none!important}img{max-width:100%}body{margin:0}</style>
 </head>
 <body>
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs><linearGradient id="dg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#19B3A5"/><stop offset="1" stop-color="#3CCB82"/></linearGradient></defs>
-  <symbol id="d-mark" viewBox="0 0 600 910"><path d="M270 370V910A270 270 0 0 1 270 370Z"/><path d="M600 0V630A280 280 0 0 1 320 910V280A280 280 0 0 1 600 0Z"/></symbol>
-  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
-  <symbol id="arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="tick" viewBox="0 0 16 16"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="plus" viewBox="0 0 16 16"><path d="M8 3v10M3 8h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-</svg>
-
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="top">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="d-mark" viewBox="0 0 600 910">
+    <path d="M270 370V910A270 270 0 0 1 270 370Z"/>
+    <path d="M600 0V630A280 280 0 0 1 320 910V280A280 280 0 0 1 600 0Z"/>
+  </symbol>
+</svg>
+
+<header class="nav on-forest" id="nav">
   <div class="wrap">
-    <a class="brand" href="#home" aria-label="Delmar Technologies home">
-      <svg viewBox="0 0 600 910" aria-hidden="true" fill="url(#dg)"><use href="#d-mark"/></svg>
+    <a class="brand" href="#top" aria-label="Delmar Technologies, back to top">
+      <svg viewBox="0 0 600 910" aria-hidden="true"><use href="#d-mark"/></svg>
       <div><b>DELMAR</b><span>TECHNOLOGIES</span></div>
     </a>
-    <nav aria-label="Main"><ul class="mainnav">
-      <li><a href="#products" data-nav="products">Products</a></li>
-      <li><a href="#insightscholar" data-nav="insightscholar">InsightScholar</a></li>
-      <li><a href="#heritage" data-nav="heritage">Heritage Prestige</a></li>
-      <li><a href="#about" data-nav="about">About</a></li>
-      <li><a href="#faq" data-nav="faq">FAQ</a></li>
-      <li><a href="#contact" data-nav="contact">Contact</a></li>
-    </ul></nav>
-    <div class="top-actions">
-      <a class="btn btn-grad" href="#contact">Book a demo</a>
-      <button class="menu-btn" id="menu-open" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 14h14"/></svg>
-      </button>
-    </div>
+    <nav aria-label="Main">
+      <ul id="menu">
+        <li><a href="#programme">Heritage Prestige</a></li>
+        <li><a href="#platforms">Software</a></li>
+        <li><a href="#company">Company</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-green" href="#contact">Arrange a meeting</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
   </div>
 </header>
 
-<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden>
-  <div class="drawer-head">
-    <a class="brand" href="#home"><svg viewBox="0 0 600 910" aria-hidden="true" fill="url(#dg)"><use href="#d-mark"/></svg><div><b>DELMAR</b><span>TECHNOLOGIES</span></div></a>
-    <button class="menu-btn" id="menu-close" type="button" aria-label="Close menu" style="display:inline-flex">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg>
-    </button>
-  </div>
-  <nav aria-label="Menu">
-    <a href="#home" data-nav="home">Home</a>
-    <a href="#products" data-nav="products">Products</a>
-    <a href="#insightscholar" data-nav="insightscholar">InsightScholar</a>
-    <a href="#heritage" data-nav="heritage">Heritage Prestige</a>
-    <a href="#about" data-nav="about">About</a>
-    <a href="#faq" data-nav="faq">FAQ</a>
-    <a href="#contact" data-nav="contact">Contact</a>
-  </nav>
-  <a class="btn btn-grad" href="#contact">Book a demo</a>
-</div>
-
-<main id="main" tabindex="-1">
-
-<!-- ============ HOME ============ -->
-<div class="view" data-view="home" data-title="Delmar Technologies">
-  <section class="hero">
+<main id="main">
+  <section class="hero on-forest" id="top">
     <div class="wrap">
-      <div class="hero-top">
-        <h1 class="enter">Report cards and school records for <span class="hl">Zimbabwean schools</span></h1>
+      <h1 class="wide">Technology for Zimbabwe’s institutions.</h1>
+      <div class="hero-foot">
+        <p class="lede">Delmar Technologies is a software company in Harare. We build school management software and run the <strong>Heritage Prestige Program</strong>, which connects learners to Zimbabwe’s aviation industry.</p>
+        <div class="actions">
+          <a class="btn btn-green" href="#contact">Arrange a meeting</a>
+          <a class="btn btn-line" href="#programme">Read about the program</a>
+        </div>
+      </div>
+    </div>
+    <svg class="wall" id="wall" viewBox="0 0 1600 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true" data-chevron="true"></svg>
+  </section>
+
+  <section class="register" aria-label="Company details">
+    <div class="wrap">
+      <dl>
+        <div><dt>Company</dt><dd>Delmar Technologies (Pvt) Ltd</dd></div>
+        <div><dt>Office</dt><dd>Greystone Park, Harare</dd></div>
+        <div><dt>We work with</dt><dd>Schools, teachers and parents</dd></div>
+        <div><dt>Aligned to</dt><dd>NDS2, Vision 2030 and the Heritage Based Curriculum</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec" id="work">
+    <div class="wrap">
+      <h2 class="sec-title wide">What Delmar does for schools</h2>
+      <p class="intro">We bring software, industry and recognition to the school, so heads can run reports properly and learners can see a real career in front of them.</p>
+      <ul class="courses">
+        <li>
+          <h3 class="wide">Software</h3>
+          <div>
+            <p>Our school platform runs report cycles from mark entry to approved, printable report cards, with a secure portal for teachers and parents.</p>
+            <a class="textlink more" href="#platforms">See our software</a>
+          </div>
+        </li>
+        <li>
+          <h3 class="wide">Experiences</h3>
+          <div>
+            <p>Airport and tower visits, aviation field trips and introductory flights, run with licensed operators and full parental consent.</p>
+            <a class="textlink more" href="#programme">See the program</a>
+          </div>
+        </li>
+        <li>
+          <h3 class="wide">Recognition</h3>
+          <div>
+            <p>Junior Aviation Certificates, Academic Merit Awards and Heritage Prestige School status that learners and schools can point to.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="programme sec on-forest" id="programme" aria-labelledby="prog-title">
+    <div class="wrap">
+      <div class="prog-top">
         <div>
-          <p class="lede enter" style="--d:1">InsightScholar takes your school through all three terms. Teachers enter marks, heads approve, and every learner gets a printable PDF report card.</p>
-          <div class="cta-row enter" style="--d:2">
-            <a class="btn btn-grad" href="#contact">Book a demo <svg class="arr" width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a>
-            <a class="btn btn-line" href="https://wa.me/263786270017" target="_blank" rel="noopener"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#wa"/></svg>Message us on WhatsApp</a>
-          </div>
-          <p class="status-line enter" style="--d:3"><span class="dot" aria-hidden="true"></span>InsightScholar is onboarding schools now</p>
+          <h2 class="wide" id="prog-title">Heritage Prestige Program</h2>
+          <p class="tagline">Elevating school standards. Inspiring future aviators.</p>
+          <p class="by">A program by Delmar Technologies (Pvt) Ltd</p>
+        </div>
+        <div>
+          <p class="mission"><strong>Our mission</strong> is to bring the full aviation ecosystem to the school through school management, mentorship, aviation experiences and recognised certificates, for less than the price of a single sheet of paper per learner.</p>
         </div>
       </div>
 
-      <div class="window" role="img" aria-label="InsightScholar dashboard: the Term 3 report cycle for Form 4, marks entry per stream and pass rates by subject">
-        <div class="chrome" aria-hidden="true"><span><i></i><i></i><i></i></span><span class="addr">yourschool.insightscholar.app/cycles/term-3-2026</span><span style="width:54px"></span></div>
-        <div class="app" aria-hidden="true">
-          <aside class="side">
-            <div class="school"><b>Example High School</b><small>Mashonaland East</small></div>
-            <span>Overview</span><span class="on">Report cycles</span><span>Classes &amp; streams</span><span>Learners</span><span>Report cards</span><span>Analytics</span><span>Staff</span>
-          </aside>
-          <div class="mainp">
-            <div class="mhead"><div><b>Term 3 report cycle · Form 4</b><p>2026 · marks due Fri 27 Nov · 4 streams</p></div><span class="chip wait">Entry open</span></div>
-            <div class="kpis">
-              <div class="kpi"><small>Learners</small><b>1,248</b><span>Form 1 – Upper 6</span></div>
-              <div class="kpi"><small>Marks entered</small><b>74%</b><span>Form 4, all subjects</span></div>
-              <div class="kpi"><small>Awaiting head</small><b>3</b><span>classes to review</span></div>
-              <div class="kpi"><small>Report cards</small><b>412</b><span>published this term</span></div>
-            </div>
-            <div class="split2">
-              <div class="pane"><div class="ph">Marks entry by stream <small>Form 4</small></div>
-                <ul class="rows">
-                  <li><span>4 North</span><div class="bar"><span style="width:100%"></span></div><span class="pct">100%</span><span class="chip ok">Approved</span></li>
-                  <li><span>4 South</span><div class="bar"><span style="width:92%"></span></div><span class="pct">92%</span><span class="chip wait">With head</span></li>
-                  <li><span>4 East</span><div class="bar"><span style="width:64%"></span></div><span class="pct">64%</span><span class="chip idle">Entering</span></li>
-                  <li><span>4 West</span><div class="bar"><span style="width:41%"></span></div><span class="pct">41%</span><span class="chip idle">Entering</span></li>
-                </ul>
-              </div>
-              <div class="pane"><div class="ph">Pass rate by subject <small>% at C or above</small></div>
-                <div class="cols"><div><em>68</em><i style="height:68%"></i></div><div><em>74</em><i style="height:74%"></i></div><div><em>61</em><i style="height:61%"></i></div><div><em>88</em><i style="height:88%"></i></div><div><em>71</em><i style="height:71%"></i></div></div>
-                <div class="colx"><span>Maths</span><span>Eng</span><span>Sci</span><span>Shona</span><span>Geo</span></div>
-              </div>
-            </div>
-          </div>
+      <div class="pieces">
+        <p class="big">Aviation in Zimbabwe was in pieces. This program connects it for learners.</p>
+        <div>
+          <p>Schools were asked to put the Heritage Based Curriculum into practice, but had no industry partner to show them how. The airport, the tower, pilots and training were never joined up for learners.</p>
+          <p>The Heritage Prestige Program brings them together for the first time, so every learner can connect to their heritage, their talent and a real industry.</p>
         </div>
       </div>
-    </div>
-    <div class="fade-ground" aria-hidden="true"></div>
-  </section>
 
-  <section class="band tight" style="padding-top:24px">
-    <div class="wrap">
-      <div class="facts-strip">
-        <div><b>Forms 1 to 6</b><span>O Level and A Level classes in one school record</span></div>
-        <div><b>Three terms</b><span>A report cycle for each term, with its own deadlines</span></div>
-        <div><b>Streams built in</b><span>North, South, East, West or your own names</span></div>
-        <div><b>Any device</b><span>Runs in the browser on phones and laptops</span></div>
+      <div class="route-wrap">
+        <p class="route-label">A learner’s path through the program</p>
+        <ol class="route">
+          <li><b>School platform</b><span>Reports and progress tracked in one place</span></li>
+          <li><b>Mentorship</b><span>Career guidance from aviation professionals</span></li>
+          <li><b>Airport visit</b><span>A day on the ground with ACZ</span></li>
+          <li><b>Control tower</b><span>How air traffic works, with ATCAZ</span></li>
+          <li><b>First flight</b><span>An introductory flight with a licensed operator</span></li>
+          <li><b>Certificate</b><span>A Junior Aviation Certificate for their portfolio</span></li>
+        </ol>
       </div>
-    </div>
-  </section>
 
-  <section class="band">
-    <div class="wrap split">
-      <div>
-        <h2>Built around how your school already runs</h2>
-        <p class="body">InsightScholar follows the school year you know: classes split into streams, subject teachers entering marks, HODs checking their department, and the head signing off before reports go home.</p>
-        <div class="cta-row"><a class="tlink" href="#insightscholar"><span>See how InsightScholar works</span><svg class="arr" width="14" height="14" aria-hidden="true"><use href="#arrow"/></svg></a></div>
-      </div>
-      <ul class="ticks">
-        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>One place for marks and comments</b><span>No more collecting mark sheets on paper from every teacher.</span></div></li>
-        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Approval before anything is published</b><span>HODs and the head review each class and can send it back with notes.</span></div></li>
-        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Report cards ready to print</b><span>Approved results become clean PDF report cards for every learner.</span></div></li>
-        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Set up from your existing lists</b><span>Upload CSV or Excel class lists. Near-duplicate names are flagged for you.</span></div></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="band rule">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Inside InsightScholar</h2>
-        <p>Pick a part of the platform to see it. Every screen uses Zimbabwean forms, streams and the three-term school year.</p>
-      </div>
-      <div class="explorer" data-explorer>
-        <div class="tabs" role="tablist" aria-label="InsightScholar features">
-          <button class="tab" role="tab" aria-selected="true" data-v="cycles"><b>Report cycles</b><span>Open, track and close each term's reports with clear deadlines.</span></button>
-          <button class="tab" role="tab" aria-selected="false" data-v="approve"><b>Approvals</b><span>HODs and the head review every class before anything is published.</span></button>
-          <button class="tab" role="tab" aria-selected="false" data-v="cards"><b>Report cards</b><span>Approved marks become printable PDF report cards for parents.</span></button>
-          <button class="tab" role="tab" aria-selected="false" data-v="import"><b>Learner import</b><span>Upload existing class lists; near-duplicate names get flagged.</span></button>
-          <button class="tab" role="tab" aria-selected="false" data-v="analytics"><b>Analytics</b><span>See pass rates by subject, class and stream as marks come in.</span></button>
-        </div>
-        <div class="stage" role="tabpanel" aria-live="polite"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band rule">
-    <div class="wrap">
-      <p class="statement">From mark sheet to signed report card, <span class="dim">in one place, every term.</span></p>
-      <ol class="process" style="margin-top:64px">
-        <li><h3>Register your school</h3><p>We check and approve every school, then staff join with a private registration code.</p></li>
-        <li><h3>Import your learners</h3><p>Upload your CSV or Excel class lists and confirm any near-matching names.</p></li>
-        <li><h3>Teachers enter marks</h3><p>Subject teachers add marks and comments for each class and stream, from any device.</p></li>
-        <li><h3>Heads approve</h3><p>HODs and the head review each class, send work back with notes, and sign off.</p></li>
-        <li><h3>Publish report cards</h3><p>Approved results become PDFs, ready to print or share with parents.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="band rule">
-    <div class="wrap split">
-      <div>
-        <h2>The Heritage Prestige <span class="hl">Program</span></h2>
-        <p class="body">Elevating school standards. Inspiring future aviators. InsightScholar plus mentorship, aviation experiences and recognised certificates, bringing the full aviation ecosystem to your school.</p>
-        <div class="cta-row"><a class="btn btn-grad" href="#heritage">Explore the program</a><a class="btn btn-line" href="#contact">Enquire</a></div>
-      </div>
-      <ul class="ticks">
-        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Reporting and digital infrastructure</b><span>Printed reports, a secure online portal and InsightScholar.</span></div></li>
-        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Professional development and recognition</b><span>Career guidance, mentorship and teacher development.</span></div></li>
-        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Aviation experience and excursions</b><span>Introductory flights, field trips, airport and tower visits.</span></div></li>
-        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Certificates and academic honours</b><span>Junior Aviation Certificates and Academic Merit Awards.</span></div></li>
-      </ul>
-    </div>
-  </section>
-  <section class="band rule">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Products from Delmar</h2>
-        <p>InsightScholar is live. Two more products are on the way for schools and organisations.</p>
-      </div>
-      <div class="products">
-        <article class="prod lead">
-          <span class="status" style="color:var(--green)">Live</span>
-          <h3>InsightScholar</h3>
-          <p>School management and reporting for Zimbabwean schools, from mark entry to signed report cards.</p>
-          <ul class="feat"><li>Termly report cycles</li><li>Mark and comment entry</li><li>HOD and head approval</li><li>PDF report cards</li><li>CSV and Excel import</li><li>Class and subject analytics</li></ul>
-          <div class="cta-row"><a class="btn btn-grad" href="#insightscholar">See InsightScholar</a><a class="btn btn-line" href="#contact">Book a demo</a></div>
-        </article>
-        <article class="prod small">
-          <span class="status" style="color:var(--amber)">In development</span>
-          <h3>Teacher app</h3>
-          <p>Roll call in seconds, and timetables that teachers and learners can check from their phones.</p>
-          <a class="tlink" href="#contact"><span>Get notified at launch</span><svg class="arr" width="14" height="14" aria-hidden="true"><use href="#arrow"/></svg></a>
-        </article>
-        <article class="prod small">
-          <span class="status" style="color:var(--muted)">Coming next</span>
-          <h3>LinkUp</h3>
-          <p>Our next product is in the works. Leave your details and we will share it with you first.</p>
-          <a class="tlink" href="#contact"><span>Join the early list</span><svg class="arr" width="14" height="14" aria-hidden="true"><use href="#arrow"/></svg></a>
-        </article>
-      </div>
-    </div>
-  </section>
-  <div data-cta></div>
-</div>
-
-<!-- ============ INSIGHTSCHOLAR ============ -->
-<div class="view" data-view="insightscholar" data-title="InsightScholar · Delmar Technologies" hidden>
-  <section class="phero">
-    <div class="wrap">
-      <h1>InsightScholar runs your school's report cycle</h1>
-      <p class="lede">Marks, comments, approvals and report cards for every class, in one system your whole staff can use from a phone or a laptop.</p>
-      <div class="cta-row"><a class="btn btn-grad" href="#contact">Book a demo <svg class="arr" width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a><a class="btn btn-line" href="#faq">Read the FAQ</a></div>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>What each person in your school does</h2>
-        <p>Everyone signs in with their own account and sees only the classes and tasks that belong to them.</p>
-      </div>
-      <div class="roles">
-        <div class="role"><h3>Subject teachers</h3><p>Enter marks and write comments for the classes they teach.</p><ul><li>Mark entry per class and stream</li><li>Comments for every learner</li><li>Submit when the class is complete</li></ul></div>
-        <div class="role"><h3>Heads of department</h3><p>Check every class in their department before it moves on.</p><ul><li>Review marks and comments</li><li>Send a class back with notes</li><li>Approve for the head</li></ul></div>
-        <div class="role"><h3>Head and deputy</h3><p>Give final sign-off and see how the whole school is doing.</p><ul><li>Final approval before publishing</li><li>Progress for every form and stream</li><li>Pass rates by subject and class</li></ul></div>
-        <div class="role"><h3>School admin</h3><p>Set up the school year and keep learner records in order.</p><ul><li>Forms, streams and subjects</li><li>Learner import from CSV or Excel</li><li>Staff accounts and roles</li></ul></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band rule">
-    <div class="wrap split">
-      <div>
-        <h2>Report cards your parents can read</h2>
-        <p class="body">Once the head approves a class, InsightScholar turns its results into a PDF report card for every learner: marks, grades, position in class and the class teacher's comment, ready to print or share.</p>
-        <ul class="ticks">
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Published only after approval</b><span>Nothing reaches parents until the head signs off.</span></div></li>
-          <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>One PDF per learner</b><span>Print a whole class at once or share them one by one.</span></div></li>
+      <div class="pillars">
+        <h3>The four pillars</h3>
+        <ul class="pillar-rows">
+          <li>
+            <h4>Reporting and digital infrastructure</h4>
+            <ul><li>Printed reports</li><li>Secure online portal</li><li>School management for schools, teachers and parents</li></ul>
+          </li>
+          <li>
+            <h4>Professional development and recognition</h4>
+            <ul><li>Career guidance and mentorship</li><li>Connections with aviation professionals</li><li>Teacher development</li><li>Higher school standards</li></ul>
+          </li>
+          <li>
+            <h4>Aviation experiences and excursions</h4>
+            <ul><li>Introductory flights</li><li>Aviation field trips</li><li>Airport and tower visits</li>
+              <li class="partners">Airport visits with ACZ, tower learning with ATCAZ, mentorship with Women in Aviation Zimbabwe, and flights with Guthrie Aviation and Flight Wings Aviation.</li></ul>
+          </li>
+          <li>
+            <h4>Certificates and academic honours</h4>
+            <ul><li>Junior Aviation Certificates</li><li>Academic Merit Awards</li><li>Recognition for learners’ portfolios</li></ul>
+          </li>
         </ul>
       </div>
-      <div class="rc" role="img" aria-label="Example report card for a Form 2 East learner">
-        <div class="rc-top"><div><b>Example High School</b><small>Term 3 · 2026</small></div><div style="text-align:right"><b>Tariro Moyo</b><small>Form 2 East · Position 6 of 41</small></div></div>
-        <table aria-hidden="true"><thead><tr><th>Subject</th><th>Mark</th><th>Grade</th></tr></thead><tbody>
-          <tr><td>Mathematics</td><td>78</td><td>A</td></tr><tr><td>English Language</td><td>66</td><td>B</td></tr><tr><td>Combined Science</td><td>71</td><td>B</td></tr><tr><td>Shona</td><td>84</td><td>A</td></tr><tr><td>Geography</td><td>58</td><td>C</td></tr><tr><td>History</td><td>62</td><td>C</td></tr></tbody></table>
-        <p class="cm">"A focused term. Keep practising map work in Geography." · Class teacher</p>
-        <div class="sig"><div>Class teacher<b>Mrs R. Chikore</b></div><div style="text-align:right">Head<b>Approved 3 Dec 2026</b></div></div>
+
+      <div class="membership">
+        <h3>What a member school gets</h3>
+        <ul>
+          <li>The Delmar school platform</li>
+          <li>Printed reports</li>
+          <li>Support with HBC School Based Projects</li>
+          <li>Heritage Prestige School status</li>
+          <li>Access to national aviation partners</li>
+        </ul>
+      </div>
+
+      <div class="prog-cta">
+        <p>Make your school a Heritage Prestige School.</p>
+        <a class="btn btn-green" href="mailto:info@delmartechnologies.co.zw?subject=Heritage%20Prestige%20Program%20enquiry">Enquire about the program</a>
       </div>
     </div>
   </section>
 
-  <section class="band rule">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>See each part of InsightScholar</h2>
-        <p>Report cycles, approvals, report cards, learner import and analytics, shown with an example school.</p>
-      </div>
-      <div class="explorer" data-explorer>
-        <div class="tabs" role="tablist" aria-label="InsightScholar features">
-          <button class="tab" role="tab" aria-selected="true" data-v="cycles"><b>Report cycles</b><span>Open, track and close each term's reports.</span></button>
-          <button class="tab" role="tab" aria-selected="false" data-v="approve"><b>Approvals</b><span>Teacher, HOD, then head.</span></button>
-          <button class="tab" role="tab" aria-selected="false" data-v="cards"><b>Report cards</b><span>PDFs for every learner.</span></button>
-          <button class="tab" role="tab" aria-selected="false" data-v="import"><b>Learner import</b><span>Class lists from CSV or Excel.</span></button>
-          <button class="tab" role="tab" aria-selected="false" data-v="analytics"><b>Analytics</b><span>Pass rates as marks arrive.</span></button>
-        </div>
-        <div class="stage" role="tabpanel" aria-live="polite"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band rule">
-    <div class="wrap split top">
+  <section class="sec">
+    <div class="wrap two">
       <div>
-        <h2>Access you control</h2>
-        <p class="body">Schools join InsightScholar through an approval step, and staff join their school with a private code. Each person's role decides what they can see and change.</p>
+        <h2 class="wide">Safety and child protection</h2>
+        <p class="intro">These rules apply to every activity, every time.</p>
+        <ul class="ticks">
+          <li>All flights are run by licensed operators under CAAZ regulations</li>
+          <li>No learner flies without written parental consent</li>
+          <li>Parental consent forms for every activity</li>
+          <li>Supervised groups, with school staff present at all times</li>
+          <li>Full indemnity and a safety briefing before every excursion</li>
+        </ul>
       </div>
-      <ul class="ticks" style="margin-top:0">
-        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Every school is approved by us</b><span>We confirm each school before it goes live.</span></div></li>
-        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Private registration codes</b><span>Staff can only join the school that gave them its code.</span></div></li>
-        <li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Role-based access</b><span>Teachers, HODs, heads and admins each see their own work.</span></div></li>
+      <div>
+        <h2 class="wide">National alignment</h2>
+        <p class="intro">The program is built around national priorities.</p>
+        <ul class="ticks">
+          <li><strong>NDS2 (2026–2030), Priority 5:</strong> Science, Technology, Innovation, Digitalisation and Human Capital Development</li>
+          <li><strong>NDS2, Priority 6:</strong> Youth Development</li>
+          <li><strong>Vision 2030:</strong> an empowered, upper-middle-income Zimbabwe</li>
+          <li><strong>Heritage Based Curriculum (2024–2030):</strong> practical School Based Projects</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="platforms sec" id="platforms">
+    <div class="wrap">
+      <h2 class="sec-title wide">Our software</h2>
+      <p class="intro">Each product runs in the browser on the phones and laptops schools already have, and is tested with real staff before it ships.</p>
+      <ul class="plat">
+        <li>
+          <h3>School platform<span class="note">Currently InsightScholar</span></h3>
+          <p>Teachers enter marks and comments, heads of department and heads approve, and every learner gets a PDF report card on time. Schools import class lists from Excel or CSV, and see results by class and subject.</p>
+          <span class="status">Live</span>
+        </li>
+        <li>
+          <h3>Teacher app</h3>
+          <p>Roll call in seconds, and timetables that teachers and learners can check from their phones.</p>
+          <span class="status dev">In development</span>
+        </li>
+        <li>
+          <h3>LinkUp</h3>
+          <p>Our next product. Ask us and we will share details with you first.</p>
+          <span class="status next">Coming next</span>
+        </li>
       </ul>
     </div>
   </section>
 
-  <section class="band rule">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Coming to InsightScholar</h2>
-        <p>What we are building next, based on what schools have asked for.</p>
-      </div>
-      <div class="principles">
-        <div class="principle"><h3>Teacher app</h3><p>Take the register in seconds at the start of each lesson, from a phone.</p></div>
-        <div class="principle"><h3>Timetables</h3><p>Timetables that teachers and learners can check wherever they are.</p></div>
-        <div class="principle"><h3>Your school's own address</h3><p>Each school gets its own web address to sign in from.</p></div>
-        <div class="principle"><h3>More products</h3><p>LinkUp and other tools from Delmar for schools and organisations.</p></div>
-      </div>
-    </div>
-  </section>
-  <div data-cta></div>
-</div>
-
-<!-- ============ HERITAGE PRESTIGE PROGRAM ============ -->
-<div class="view" data-view="heritage" data-title="Heritage Prestige Program · Delmar Technologies" hidden>
-  <section class="phero">
-    <div class="wrap">
-      <p class="crumb">Insight Scholar Heritage Prestige Program</p>
-      <h1>Elevating school standards. Inspiring future <span class="hl">aviators.</span></h1>
-      <p class="lede">A product of Delmar Technologies (Pvt) Ltd. We bring the full aviation ecosystem to the school, through world-class school management, mentorship, aviation experiences and recognised certificates, for less than the price of a single sheet of paper per learner.</p>
-      <div class="cta-row"><a class="btn btn-grad" href="#contact">Enquire about the program <svg class="arr" width="14" height="14" aria-hidden="true"><use href="#arrow"/></svg></a><a class="btn btn-line" href="https://wa.me/263786270017" target="_blank" rel="noopener"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#wa"/></svg>Message us on WhatsApp</a></div>
-    </div>
-  </section>
-  <section class="band">
-    <div class="wrap split top">
+  <section class="sec" id="company">
+    <div class="wrap company">
+      <h2 class="big wide">A Zimbabwean company, building for local institutions.</h2>
       <div>
-        <p class="statement" style="font-size:clamp(28px,3.4vw,44px)">Something that has <span class="hl">never happened</span> in Zimbabwe before.</p>
-      </div>
-      <div>
-        <p class="body" style="margin-top:0;color:var(--muted);font-size:17px">Schools were asked to implement the Heritage Based Curriculum (HBC), but they had no industry partner to show them how. Aviation was in pieces: the airport, the tower, pilots and training were never connected for learners.</p>
-        <p class="body" style="color:var(--muted);font-size:17px;margin-top:16px">This program connects it all for the first time. We are not competing with other programs. We are doing something new.</p>
-        <dl class="facts" style="margin-top:32px">
-          <div style="grid-column:1/-1"><dt>Vision</dt><dd>To see every Zimbabwean learner connected to their heritage, their talent, and a real industry, so they can dream bigger and achieve more.</dd></div>
+        <p>Delmar Technologies is a private limited company registered in Zimbabwe and based in Harare. We design, build and support everything we offer ourselves, and questions go straight to the people who build it.</p>
+        <p>Most school software is made for somewhere else, with different terms, different grading and fast internet everywhere. We build for the way Zimbabwean schools already work.</p>
+        <dl class="facts">
+          <div><dt>Registered name</dt><dd>Delmar Technologies (Pvt) Ltd</dd></div>
+          <div><dt>Office</dt><dd>5 Marston Close, Greystone Park, Harare</dd></div>
+          <div><dt>Website</dt><dd>delmartechnologies.co.zw</dd></div>
+          <div><dt>Programs</dt><dd>Heritage Prestige Program</dd></div>
         </dl>
       </div>
     </div>
   </section>
-  <section class="band rule">
+
+  <section class="contact on-forest" id="contact" aria-labelledby="contact-title">
+    <svg class="wall" id="wall2" viewBox="0 0 1600 110" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg>
     <div class="wrap">
-      <div class="sec-head"><h2>Our services: the 4 pillars</h2><p>Everything a school needs to deliver HBC aviation projects, in one program.</p></div>
-      <div class="pillars">
-        <article class="pillar"><span class="pn">Pillar 1</span><h3>Reporting and digital infrastructure</h3><ul class="ticks"><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Physical printed reports</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Secure online portal</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>World-class school management</b><span>For schools, teachers and parents.</span></div></li></ul></article>
-        <article class="pillar"><span class="pn">Pillar 2</span><h3>Professional development and recognition</h3><ul class="ticks"><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Career guidance and mentorship</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Connections with aviation professionals</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Teacher development</b><span>And school standards elevation.</span></div></li></ul></article>
-        <article class="pillar"><span class="pn">Pillar 3</span><h3>Aviation experience and excursions</h3><ul class="ticks"><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Aviation introductory flights</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Aviation field trips</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Airport and tower visits</b><span>Airport visits with ACZ, tower learning with ATCAZ, mentorship with Women in Aviation Zimbabwe, and flights with Guthrie Aviation and Flight Wings Aviation.</span></div></li></ul></article>
-        <article class="pillar"><span class="pn">Pillar 4</span><h3>Certificates and academic honours</h3><ul class="ticks"><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Junior Aviation Certificates</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Academic Merit Awards</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Recognition that motivates</b><span>Builds each learner's portfolio for the future.</span></div></li></ul></article>
-      </div>
-    </div>
-  </section>
-  <section class="band rule">
-    <div class="wrap split top">
       <div>
-        <h2>What schools get</h2>
-        <ul class="ticks"><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>The InsightScholar platform</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Printed reports</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>HBC School Based Project support</b></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Prestige status</b><span>As a Heritage Prestige School.</span></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Access to national aviation partners</b></div></li></ul>
-      </div>
-      <div>
-        <h2>Safety and child protection</h2>
-        <ul class="ticks"><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Licensed operators only</b><span>All flights by licensed operators under CAAZ regulations.</span></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Parental consent for every activity</b><span>No learner flies without written parental consent.</span></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Supervised groups</b><span>School staff present at all times.</span></div></li><li><svg width="16" height="16" aria-hidden="true"><use href="#tick"/></svg><div><b>Briefed and covered</b><span>Full indemnity and safety briefing before every excursion.</span></div></li></ul>
-      </div>
-    </div>
-  </section>
-  <section class="band rule">
-    <div class="wrap">
-      <div class="sec-head"><h2>Aligned with national priorities</h2><p>The program is built around Zimbabwe's development and curriculum goals.</p></div>
-      <div class="principles">
-        <div class="principle"><h3>NDS2 (2026–2030)</h3><p>Priority 5: Science, Technology, Innovation, Digitalisation and Human Capital Development. Priority 6: Youth Development.</p></div>
-        <div class="principle"><h3>Vision 2030</h3><p>Building an empowered, upper-middle-income Zimbabwe.</p></div>
-        <div class="principle"><h3>Heritage Based Curriculum (HBC 2024–2030)</h3><p>Practical School Based Projects, delivered with a real industry partner.</p></div>
-        <div class="principle"><h3>Become a Heritage Prestige School</h3><p>Call or WhatsApp +263 786 270 017, or email info@delmartechnologies.co.zw.</p></div>
-      </div>
-    </div>
-  </section>
-  <div data-cta></div>
-</div>
-
-<!-- ============ PRODUCTS ============ -->
-<div class="view" data-view="products" data-title="Products · Delmar Technologies" hidden>
-  <section class="phero">
-    <div class="wrap">
-      <h1>Software for schools and organisations</h1>
-      <p class="lede">Delmar Technologies builds focused web products for institutions in Zimbabwe. They run in the browser, work on the devices people already have, and are tested with real staff before they ship.</p>
-    </div>
-  </section>
-  <section class="band">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>One live product, two on the way</h2>
-        <p>Start with InsightScholar today, and hear first when the teacher app and LinkUp launch.</p>
-      </div>
-      <div class="products">
-        <article class="prod lead">
-          <span class="status" style="color:var(--green)">Live</span>
-          <h3>InsightScholar</h3>
-          <p>School management and reporting for Zimbabwean schools. Teachers enter marks and comments, heads approve, and every learner gets a PDF report card on time.</p>
-          <ul class="feat"><li>Termly report cycles</li><li>Mark and comment entry</li><li>HOD and head approval</li><li>PDF report cards</li><li>CSV and Excel import</li><li>Class and subject analytics</li></ul>
-          <div class="cta-row"><a class="btn btn-grad" href="#insightscholar">See InsightScholar</a><a class="btn btn-line" href="#contact">Book a demo</a></div>
-        </article>
-        <article class="prod small">
-          <span class="status" style="color:var(--amber)">In development</span>
-          <h3>Teacher app</h3>
-          <p>A companion to InsightScholar for the classroom: roll call in seconds and timetables on every phone.</p>
-          <a class="tlink" href="#contact"><span>Get notified at launch</span><svg class="arr" width="14" height="14" aria-hidden="true"><use href="#arrow"/></svg></a>
-        </article>
-        <article class="prod small">
-          <span class="status" style="color:var(--muted)">Coming next</span>
-          <h3>LinkUp</h3>
-          <p>Our next product is in the works. Leave your details and we will share it with you first.</p>
-          <a class="tlink" href="#contact"><span>Join the early list</span><svg class="arr" width="14" height="14" aria-hidden="true"><use href="#arrow"/></svg></a>
-        </article>
-      </div>
-    </div>
-  </section>
-  <section class="band rule">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>How we build every product</h2>
-        <p>The same rules apply to everything that carries the Delmar name.</p>
-      </div>
-      <div class="principles">
-        <div class="principle"><h3>Made for local institutions</h3><p>We start from how Zimbabwean schools and organisations actually work, then build the software around it.</p></div>
-        <div class="principle"><h3>Works on what you have</h3><p>Everything runs in a web browser, on the phones and laptops your staff already use. Nothing to install.</p></div>
-        <div class="principle"><h3>Tested with real staff</h3><p>We test with real schools and staff before anything ships, and keep improving from their feedback.</p></div>
-        <div class="principle"><h3>People you can reach</h3><p>Questions go to the team that builds the product, by WhatsApp, phone or email.</p></div>
-      </div>
-    </div>
-  </section>
-  <div data-cta></div>
-</div>
-
-<!-- ============ ABOUT ============ -->
-<div class="view" data-view="about" data-title="About · Delmar Technologies" hidden>
-  <section class="phero">
-    <div class="wrap">
-      <h1>A Zimbabwean software company for local institutions</h1>
-      <p class="lede">Delmar Technologies (Pvt) Ltd is a private limited company registered in Zimbabwe and based in Harare. We design, build and support our own products, starting with InsightScholar for schools.</p>
-    </div>
-  </section>
-  <section class="band">
-    <div class="wrap split top">
-      <p class="statement" style="font-size:clamp(28px,3.4vw,44px)">We build software that schools and organisations can <span class="hl">afford, trust and use</span> from day one.</p>
-      <div>
-        <p class="body" style="margin-top:0;color:var(--muted);font-size:17px">Most school software is built for somewhere else. It assumes different terms, different grading and fast internet everywhere. We started Delmar to build for the way Zimbabwean institutions work, and to stay close to the people who use what we make.</p>
-        <p class="body" style="color:var(--muted);font-size:17px;margin-top:16px">InsightScholar is our first product. A teacher app and LinkUp are next, and each one is tested with real staff before it ships.</p>
-        <dl class="facts" style="margin-top:32px">
-          <div><dt>Registered</dt><dd>Delmar Technologies (Pvt) Ltd</dd></div>
-          <div><dt>Based in</dt><dd>Greystone Park, Harare</dd></div>
-          <div><dt>First product</dt><dd>InsightScholar</dd></div>
-          <div><dt>Built for</dt><dd>Schools and organisations</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
-  <section class="band rule">
-    <div class="wrap">
-      <div class="sec-head"><h2>What we hold ourselves to</h2><p>These shape every decision about what we build and how we support it.</p></div>
-      <div class="principles">
-        <div class="principle"><h3>Local first</h3><p>Forms, streams, terms and grading work the way your school already runs them.</p></div>
-        <div class="principle"><h3>Honest software</h3><p>Clear about what a product does today and what is still coming. No surprises on report day.</p></div>
-        <div class="principle"><h3>Careful with data</h3><p>Learner and staff records are handled with care, and each person only sees what their role needs.</p></div>
-        <div class="principle"><h3>Close to our users</h3><p>We listen to teachers, heads and admins, and their feedback decides what we build next.</p></div>
-      </div>
-    </div>
-  </section>
-  <div data-cta></div>
-</div>
-
-<!-- ============ FAQ ============ -->
-<div class="view" data-view="faq" data-title="FAQ · Delmar Technologies" hidden>
-  <section class="phero">
-    <div class="wrap">
-      <h1>Questions schools ask us</h1>
-      <p class="lede">Can't find your answer here? Message us on WhatsApp or email and the team that builds InsightScholar will reply.</p>
-    </div>
-  </section>
-  <section class="band">
-    <div class="wrap" style="max-width:960px">
-      <div class="faq-group">
-        <h2>About InsightScholar</h2>
-        <div class="faq">
-          <details><summary>What is InsightScholar?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>InsightScholar is school management and reporting software for Zimbabwean schools. It handles report cycles, mark and comment entry, HOD and head approval, PDF report cards, learner import and analytics.</p></div></details>
-          <details><summary>Which schools is it for?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>Zimbabwean schools running classes, streams and three terms a year. If your school is organised differently, tell us and we will show you how it fits.</p></div></details>
-          <details><summary>Do we need to install anything?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>No. InsightScholar runs in a web browser, so staff can use it on the phones and laptops they already have.</p></div></details>
-          <details><summary>Is there a teacher app?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>A teacher app with roll call and timetables is in development. Ask to be notified and we will tell you when it is ready.</p></div></details>
+        <h2 class="wide" id="contact-title">Arrange a meeting.</h2>
+        <p class="sub">We meet schools, associations and government departments in Harare or by call. Tell us who you represent and what you would like to see.</p>
+        <div class="actions">
+          <a class="btn btn-green" href="mailto:info@delmartechnologies.co.zw?subject=Meeting%20request">Email Delmar</a>
+          <a class="btn btn-line" href="https://wa.me/263786270017">Message on WhatsApp</a>
         </div>
       </div>
-      <div class="faq-group">
-        <h2>Setting up</h2>
-        <div class="faq">
-          <details><summary>How do we get started?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>Book a demo. After it, you register your school, we approve it, and your staff join with a private registration code.</p></div></details>
-          <details><summary>Can we use our existing class lists?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>Yes. Upload your class lists as CSV or Excel files. InsightScholar flags names that look like duplicates so you can confirm or merge them before they are added.</p></div></details>
-          <details><summary>What does it cost?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>Contact us for pricing for your school. We will go through it with you after your demo.</p></div></details>
-        </div>
-      </div>
-      <div class="faq-group">
-        <h2>Marks, reports and data</h2>
-        <div class="faq">
-          <details><summary>Who can see learners' marks?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>Access depends on each person's role. Teachers see the classes they teach, HODs see their department, and the head and admins see the whole school.</p></div></details>
-          <details><summary>How do report cards reach parents?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>Once the head approves a class, InsightScholar creates a PDF report card for every learner. You can print them or share them with parents.</p></div></details>
-          <details><summary>Can a class be sent back for changes?<span class="pm"><svg width="14" height="14" aria-hidden="true"><use href="#plus"/></svg></span></summary><div class="ans"><p>Yes. HODs and the head can return a class to the teacher with a note explaining what to fix. It comes back for review once it is updated.</p></div></details>
-        </div>
-      </div>
+      <ul class="lines">
+        <li><div><small>Email</small><a href="mailto:info@delmartechnologies.co.zw">info@delmartechnologies.co.zw</a></div><button class="copy" type="button" data-copy="info@delmartechnologies.co.zw">Copy</button></li>
+        <li><div><small>Phone and WhatsApp</small><a href="tel:+263786270017">+263 786 270 017</a></div><button class="copy" type="button" data-copy="+263786270017">Copy</button></li>
+        <li><div><small>Office</small><span>5 Marston Close, Greystone Park, Harare</span></div><button class="copy" type="button" data-copy="5 Marston Close, Greystone Park, Harare">Copy</button></li>
+      </ul>
     </div>
   </section>
-  <div data-cta></div>
-</div>
-
-<!-- ============ CONTACT ============ -->
-<div class="view" data-view="contact" data-title="Contact · Delmar Technologies" hidden>
-  <section class="phero">
-    <div class="wrap">
-      <h1>Book an InsightScholar demo</h1>
-      <p class="lede">Tell us about your school and we will set up a walkthrough using your own forms, streams and subjects.</p>
-    </div>
-  </section>
-  <section class="band">
-    <div class="wrap contact-grid">
-      <div>
-        <h2 style="font-size:28px;letter-spacing:-.025em;margin-bottom:20px">Talk to us directly</h2>
-        <div class="ways">
-          <div class="way"><div><small>WhatsApp and phone</small><span>+263 786 270 017</span></div><div class="acts"><a class="mini wa" href="https://wa.me/263786270017" target="_blank" rel="noopener">Open WhatsApp</a><button class="mini copy" type="button" data-copy="+263786270017">Copy</button></div></div>
-          <div class="way"><div><small>Email</small><span>info@delmartechnologies.co.zw</span></div><div class="acts"><button class="mini copy" type="button" data-copy="info@delmartechnologies.co.zw">Copy</button></div></div>
-          <div class="way"><div><small>Office</small><span>5 Marston Close, Greystone Park, Harare</span></div><div class="acts"><a class="mini" href="https://www.google.com/maps/search/?api=1&amp;query=Marston+Close+Greystone+Park+Harare" target="_blank" rel="noopener">Get directions</a></div></div>
-        </div>
-      </div>
-      <form class="card" id="demo" novalidate>
-        <h2>Request a demo</h2>
-        <p class="hint">Fill this in and we will prepare your message for WhatsApp or email.</p>
-        <div class="field"><label for="f-school">School name</label><input id="f-school" name="school" autocomplete="organization" placeholder="e.g. Example High School" required aria-describedby="e-school"><span class="err" id="e-school"></span></div>
-        <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" placeholder="e.g. Mrs R. Chikore" required aria-describedby="e-name"><span class="err" id="e-name"></span></div>
-        <div class="field"><label for="f-role">Your role</label><select id="f-role" name="role"><option>Head</option><option>Deputy head</option><option>HOD</option><option>Teacher</option><option>Bursar or admin</option><option>Other</option></select></div>
-        <div class="field"><label for="f-size">Number of learners</label><select id="f-size" name="size"><option>Under 300</option><option selected>300 to 800</option><option>800 to 1,500</option><option>Over 1,500</option></select></div>
-        <div class="field full"><label for="f-contact">Phone or email</label><input id="f-contact" name="contact" autocomplete="email" placeholder="+263 … or name@school.co.zw" required aria-describedby="e-contact"><span class="err" id="e-contact"></span></div>
-        <div class="field full"><label for="f-msg">Anything we should know? <span class="opt">(optional)</span></label><textarea id="f-msg" name="msg" placeholder="e.g. We run Forms 1 to 6 with four streams per form."></textarea></div>
-        <button class="btn btn-grad" type="submit">Prepare my demo request</button>
-        <div class="ready" id="ready" hidden>
-          <b>Your request is ready to send</b>
-          <pre id="msg-out"></pre>
-          <div class="acts"><a class="mini wa" id="wa-send" href="https://wa.me/263786270017" target="_blank" rel="noopener">Send on WhatsApp</a><button class="mini" type="button" id="copy-msg">Copy message</button></div>
-          <p class="small">Or paste it into an email to info@delmartechnologies.co.zw.</p>
-        </div>
-      </form>
-    </div>
-  </section>
-</div>
-
-<!-- ============ PRIVACY ============ -->
-<div class="view" data-view="privacy" data-title="Privacy policy · Delmar Technologies" hidden>
-  <section class="phero">
-    <div class="wrap">
-      <h1>Privacy policy</h1>
-      <p class="lede">How Delmar Technologies collects, uses and protects information in InsightScholar and on this website.</p>
-      <p class="updated">Last updated 12 November 2026</p>
-    </div>
-  </section>
-  <section class="band">
-    <div class="wrap legal">
-      <nav aria-label="Legal pages"><b>Legal</b><a href="#privacy" data-nav="privacy">Privacy policy</a><a href="#terms" data-nav="terms">Terms of use</a></nav>
-      <div class="prose">
-        <h2>Who we are</h2>
-        <p>Delmar Technologies (Pvt) Ltd ("Delmar", "we") is a company registered in Zimbabwe, based in Greystone Park, Harare. We provide InsightScholar and other software to schools and organisations.</p>
-        <h2>Information we handle</h2>
-        <p>When a school uses InsightScholar, we handle information on the school's behalf, including:</p>
-        <ul><li><strong>School details</strong> such as the school's name, forms, streams and subjects.</li><li><strong>Staff details</strong> such as names, contact details, roles and sign-in information.</li><li><strong>Learner records</strong> such as names, classes, marks, grades and teacher comments.</li></ul>
-        <p>When you contact us, we receive the details you choose to send, such as your name, school and phone number or email.</p>
-        <h2>How we use it</h2>
-        <p>We use this information to run InsightScholar for your school, to support your staff, to keep the service secure, and to reply to your enquiries. We do not sell personal information.</p>
-        <h2>Who can see it</h2>
-        <p>Inside InsightScholar, each person sees only what their role allows. Delmar staff access school data only when needed to provide or support the service.</p>
-        <h2>Your rights</h2>
-        <p>Schools, staff and parents can ask us what information we hold, ask us to correct it, or ask us to delete it where the law allows. We handle personal information in line with Zimbabwe's Cyber and Data Protection Act.</p>
-        <h2>Contact</h2>
-        <p>For privacy questions, email info@delmartechnologies.co.zw or write to us at our Harare office.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ============ TERMS ============ -->
-<div class="view" data-view="terms" data-title="Terms of use · Delmar Technologies" hidden>
-  <section class="phero">
-    <div class="wrap">
-      <h1>Terms of use</h1>
-      <p class="lede">The basic terms for using InsightScholar and this website.</p>
-      <p class="updated">Last updated 12 November 2026</p>
-    </div>
-  </section>
-  <section class="band">
-    <div class="wrap legal">
-      <nav aria-label="Legal pages"><b>Legal</b><a href="#privacy" data-nav="privacy">Privacy policy</a><a href="#terms" data-nav="terms">Terms of use</a></nav>
-      <div class="prose">
-        <h2>Using InsightScholar</h2>
-        <p>InsightScholar is provided to approved schools. Each school is responsible for who it invites, for the accuracy of the records it enters, and for keeping its registration codes private.</p>
-        <h2>Accounts</h2>
-        <p>Staff must use their own account and keep their sign-in details safe. Tell us straight away if you think an account has been used without permission.</p>
-        <h2>Your school's data</h2>
-        <p>Your school's records belong to your school. We use them only to provide and support the service, as described in our <a href="#privacy">privacy policy</a>.</p>
-        <h2>Availability and changes</h2>
-        <p>We work to keep InsightScholar available and to improve it over time. We may update features, and we will tell schools about changes that affect how they use the service.</p>
-        <h2>Agreements with schools</h2>
-        <p>A school's subscription, pricing and support are set out in its agreement with Delmar. Where that agreement differs from these terms, the agreement applies.</p>
-        <h2>Governing law</h2>
-        <p>These terms are governed by the laws of Zimbabwe.</p>
-        <h2>Contact</h2>
-        <p>Questions about these terms can go to info@delmartechnologies.co.zw.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
 </main>
-
-<template id="cta-tpl">
-  <section class="ctaband">
-    <div class="wrap">
-      <h2>See InsightScholar with your own <span class="hl">classes</span></h2>
-      <div>
-        <p>Book a walkthrough set up with your school's forms, streams and subjects.</p>
-        <div class="cta-row"><a class="btn btn-grad" href="#contact">Book a demo <svg class="arr" width="16" height="16" aria-hidden="true"><use href="#arrow"/></svg></a><a class="btn btn-line" href="https://wa.me/263786270017" target="_blank" rel="noopener"><svg class="wa-ic" width="18" height="18" aria-hidden="true"><use href="#wa"/></svg>Message us on WhatsApp</a></div>
-      </div>
-    </div>
-  </section>
-</template>
 
 <footer>
   <div class="wrap">
-    <div class="fgrid">
-      <div>
-        <a class="brand" href="#home" aria-label="Delmar Technologies home"><svg viewBox="0 0 600 910" aria-hidden="true" fill="url(#dg)"><use href="#d-mark"/></svg><div><b>DELMAR</b><span>TECHNOLOGIES</span></div></a>
-        <p>Software for Zimbabwean schools and organisations.</p>
-      </div>
-      <div><h2>Products</h2><ul><li><a href="#insightscholar">InsightScholar</a></li><li><a href="#heritage">Heritage Prestige Program</a></li><li><a href="#products">Teacher app</a></li><li><a href="#products">LinkUp</a></li></ul></div>
-      <div><h2>Company</h2><ul><li><a href="#about">About</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
-      <div><h2>Legal</h2><ul><li><a href="#privacy">Privacy policy</a></li><li><a href="#terms">Terms of use</a></li></ul></div>
-      <div><h2>Get in touch</h2><div class="fcontact"><span>+263 786 270 017</span><span>info@delmartechnologies.co.zw</span><span>Greystone Park, Harare</span></div></div>
-    </div>
-    <div class="fbase"><span>© 2026 Delmar Technologies (Pvt) Ltd</span><span class="num">delmartechnologies.co.zw</span></div>
+    <span>© 2026 Delmar Technologies (Pvt) Ltd</span>
+    <nav aria-label="Footer">
+      <a href="#programme">Heritage Prestige</a><a href="#platforms">Software</a><a href="#company">Company</a><a href="#contact">Contact</a>
+    </nav>
   </div>
 </footer>
 
-<a class="fab" href="https://wa.me/263786270017" target="_blank" rel="noopener" aria-label="Chat with Delmar on WhatsApp"><svg width="22" height="22" aria-hidden="true"><use href="#wa"/></svg><span>Chat on WhatsApp</span></a>
-
 <script>
 (function(){
-  /* Shared CTA band */
-  var tpl=document.getElementById('cta-tpl');
-  document.querySelectorAll('[data-cta]').forEach(function(slot){slot.replaceWith(tpl.content.cloneNode(true))});
+  var NS="http://www.w3.org/2000/svg";
+  // Seeded random so the wall looks the same on every visit
+  function rng(seed){return function(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}}
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e}
 
-  /* Router */
-  var views=[].slice.call(document.querySelectorAll('[data-view]'));
-  var names=views.map(function(v){return v.dataset.view});
-  var first=true;
-  function route(){
-    var h=(location.hash||'').slice(1);
-    var name=names.indexOf(h)>-1?h:(h==='main'?current:'home');
-    if(h==='main')return;
-    views.forEach(function(v){
-      var on=v.dataset.view===name;
-      if(on&&v.hidden){v.hidden=false;v.style.animation='none';void v.offsetWidth;v.style.animation=''}
-      else v.hidden=!on;
-      if(on)document.title=v.dataset.title;
+  function build(svg,opts){
+    var W=1600,H=opts.h,r=rng(opts.seed),y=H,i=0,gap=4;
+    var tones=["#123E39","#164640","#0F3934","#1A4D46","#134139"];
+    var rows=opts.rows;
+    rows.forEach(function(row){
+      var g=el("g",{"class":"course"});
+      g.style.animationDelay=(i*90)+"ms";
+      y-=row.h;
+      if(row.chev){
+        // Chevron course: Great Zimbabwe frieze and runway blast-pad chevrons
+        var step=row.h*1.15,d="",x=-step,up=true;
+        d="M"+x+" "+(y+row.h-3);
+        while(x<W+step){x+=step;d+=" L"+x+" "+(up?y+3:y+row.h-3);up=!up}
+        var p=el("path",{d:d,fill:"none",stroke:"#E9B10C","stroke-width":row.h*0.42,"stroke-linejoin":"miter","class":"chev"});
+        g.appendChild(p);
+        svg.appendChild(g);
+        try{p.style.setProperty("--len",Math.ceil(p.getTotalLength()))}catch(e){p.style.setProperty("--len","4000")}
+      }else{
+        var x=-r()*60;
+        while(x<W){
+          var w=row.h*(1.6+r()*2.6);
+          g.appendChild(el("rect",{x:x.toFixed(1),y:y,width:(w-gap).toFixed(1),height:row.h-gap,rx:1.5,fill:tones[Math.floor(r()*tones.length)]}));
+          x+=w;
+        }
+        svg.appendChild(g);
+      }
+      i++;
     });
-    document.querySelectorAll('[data-nav]').forEach(function(a){
-      if(a.dataset.nav===name)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
-    });
-    current=name;
-    closeMenu();
-    if(!first){window.scrollTo(0,0);var h1=document.querySelector('[data-view="'+name+'"] h1');if(h1){h1.tabIndex=-1;h1.focus({preventScroll:true})}}
-    first=false;
   }
-  var current='home';
+  build(document.getElementById("wall"),{h:200,seed:7,rows:[{h:30},{h:26},{h:22},{h:34,chev:true},{h:20},{h:18},{h:16}]});
+  build(document.getElementById("wall2"),{h:110,seed:19,rows:[{h:26},{h:22},{h:20},{h:18},{h:16}]});
 
-  /* Mobile menu */
-  var drawer=document.getElementById('drawer'),openBtn=document.getElementById('menu-open'),closeBtn=document.getElementById('menu-close');
-  function openMenu(){drawer.hidden=false;openBtn.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';closeBtn.focus()}
-  function closeMenu(){if(drawer.hidden)return;drawer.hidden=true;openBtn.setAttribute('aria-expanded','false');document.body.style.overflow=''}
-  openBtn.addEventListener('click',openMenu);
-  closeBtn.addEventListener('click',function(){closeMenu();openBtn.focus()});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!drawer.hidden){closeMenu();openBtn.focus()}});
-  window.addEventListener('hashchange',route);
-  route();
+  // Mobile menu
+  var nav=document.getElementById("nav"),mb=nav.querySelector(".menu-btn");
+  mb.addEventListener("click",function(){var o=nav.classList.toggle("open");mb.setAttribute("aria-expanded",o);mb.textContent=o?"Close":"Menu"});
+  nav.querySelectorAll("#menu a").forEach(function(a){a.addEventListener("click",function(){nav.classList.remove("open");mb.setAttribute("aria-expanded","false");mb.textContent="Menu"})});
 
-  /* Feature explorer */
-  var CHECK='<svg width="14" height="14" aria-hidden="true"><use href="#tick"/></svg>';
-  var V={
-    cycles:'<div class="vh"><div><b>School year 2026</b><small>Three report cycles</small></div><span class="chip wait">Term 3 open</span></div>'+
-      '<div class="terms3"><div class="term"><small>Term 1</small><b>Closed</b><span class="chip ok">1,236 cards</span></div><div class="term"><small>Term 2</small><b>Closed</b><span class="chip ok">1,241 cards</span></div><div class="term now"><small>Term 3</small><b>In progress</b><span class="chip wait">74% entered</span></div></div>'+
-      '<ul class="dl"><li><span>Marks entry closes</span><span>Fri 27 Nov</span></li><li><span>HOD review</span><span>30 Nov – 2 Dec</span></li><li><span>Head sign-off</span><span>3 Dec</span></li><li><span>Report cards to parents</span><span>4 Dec</span></li></ul>',
-    approve:'<div class="vh"><div><b>Form 4 South · Mathematics</b><small>38 learners · Mr T. Ncube</small></div><span class="chip wait">With head</span></div>'+
-      '<div class="chain"><div class="step done"><span class="sd">'+CHECK+'</span><div><b>Teacher submitted</b><small>Marks and comments for all 38 learners</small></div><span class="chip ok">23 Nov</span></div>'+
-      '<div class="step done"><span class="sd">'+CHECK+'</span><div><b>HOD approved</b><small>Mathematics department</small></div><span class="chip ok">24 Nov</span></div>'+
-      '<div class="step"><span class="sd">3</span><div><b>Head sign-off</b><small>Final check before publishing</small></div><span class="chip wait">Pending</span></div></div>'+
-      '<p class="note">Sent back once by the HOD: "Please add comments for the 4 learners below 40%." Fixed and resubmitted.</p>',
-    cards:'<div class="vh"><div><b>Report card preview</b><small>PDF · ready to print</small></div><span class="chip ok">Published</span></div>'+
-      '<div class="rc" style="margin-top:16px;padding:18px"><div class="rc-top"><div><b>Example High School</b><small>Term 3 · 2026</small></div><div style="text-align:right"><b>Tariro Moyo</b><small>Form 2 East · Position 6 of 41</small></div></div>'+
-      '<table><thead><tr><th>Subject</th><th>Mark</th><th>Grade</th></tr></thead><tbody><tr><td>Mathematics</td><td>78</td><td>A</td></tr><tr><td>English Language</td><td>66</td><td>B</td></tr><tr><td>Combined Science</td><td>71</td><td>B</td></tr><tr><td>Shona</td><td>84</td><td>A</td></tr></tbody></table>'+
-      '<p class="cm">"A focused term. Keep practising map work in Geography."</p></div>',
-    import:'<div class="vh"><div><b>Import learners</b><small>CSV or Excel</small></div><span class="chip wait">3 to check</span></div>'+
-      '<div class="file"><span class="ic">XLSX</span><div><b>form1_class_lists_2026.xlsx</b><small>412 rows · 4 streams</small></div></div>'+
-      '<div style="margin-top:14px"><div class="match"><span>Tinashe Chikwanha</span><span>94% match</span><span>Tinashe Chikwana</span></div><div class="match"><span>Ruvimbo Mapfumo</span><span>91% match</span><span>Ruvimbo Mafumo</span></div><div class="match"><span>Kudzai Nyathi</span><span>89% match</span><span>Kudzayi Nyathi</span></div></div>'+
-      '<p class="note" style="--c:var(--green)">409 learners ready to add. Confirm or merge the 3 near-matches to finish.</p>',
-    analytics:'<div class="vh"><div><b>Form 4 · Term 3</b><small>% of learners at C or above</small></div><span class="chip idle">Updates as marks arrive</span></div>'+
-      ['Shona|88','English|74','Geography|71','Mathematics|68','Science|61','History|57'].map(function(r){var p=r.split('|');return '<div class="hbar"><span>'+p[0]+'</span><div class="bar"><span style="width:'+p[1]+'%"></span></div><span class="pct">'+p[1]+'%</span></div>'}).join('')+
-      '<p class="note" style="--c:var(--teal)">Science is 9 points below last term in 4 West. Flagged for the HOD.</p>'
-  };
-  document.querySelectorAll('[data-explorer]').forEach(function(ex,k){
-    var stage=ex.querySelector('.stage'),tabs=[].slice.call(ex.querySelectorAll('.tab'));
-    stage.id='panel-'+k;
-    tabs.forEach(function(t,i){t.id='tab-'+k+'-'+i;t.setAttribute('aria-controls',stage.id)});
-    function show(v){
-      tabs.forEach(function(t){var on=t.dataset.v===v;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;if(on)stage.setAttribute('aria-labelledby',t.id)});
-      stage.innerHTML='<div class="sv">'+V[v]+'</div>';
-    }
-    tabs.forEach(function(t,i){
-      t.addEventListener('click',function(){show(t.dataset.v)});
-      t.addEventListener('keydown',function(e){var d=(e.key==='ArrowDown'||e.key==='ArrowRight')?1:(e.key==='ArrowUp'||e.key==='ArrowLeft')?-1:0;if(!d)return;e.preventDefault();var n=tabs[(i+d+tabs.length)%tabs.length];n.focus();show(n.dataset.v)});
+  // Copy buttons
+  document.querySelectorAll(".copy").forEach(function(b){
+    b.addEventListener("click",function(){
+      var t=b.getAttribute("data-copy");
+      function done(x){b.textContent=x;setTimeout(function(){b.textContent="Copy"},1600)}
+      try{navigator.clipboard.writeText(t).then(function(){done("Copied")},function(){done("Copy failed")})}catch(e){done("Copy failed")}
     });
-    show('cycles');
   });
-
-  /* Copy buttons */
-  function copy(text,btn,selEl){
-    var old=btn.textContent;
-    function swap(t){btn.classList.add('swap');setTimeout(function(){btn.textContent=t;btn.classList.remove('swap')},90)}
-    function done(m){swap(m);setTimeout(function(){swap(old)},1600)}
-    function fb(){if(selEl){var r=document.createRange();r.selectNodeContents(selEl);var s=getSelection();s.removeAllRanges();s.addRange(r)}done('Selected')}
-    try{navigator.clipboard.writeText(text).then(function(){done('Copied')},fb)}catch(e){fb()}
-  }
-  document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){copy(b.dataset.copy,b,b.closest('.way').querySelector('span'))})});
-
-  /* Demo form */
-  var form=document.getElementById('demo'),ready=document.getElementById('ready'),out=document.getElementById('msg-out');
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var ok=true;
-    [['school','Enter your school name.'],['name','Enter your name.'],['contact','Add a phone number or email so we can reply.']].forEach(function(f){
-      var el=document.getElementById('f-'+f[0]),er=document.getElementById('e-'+f[0]);
-      if(!el.value.trim()){er.textContent=f[1];el.setAttribute('aria-invalid','true');if(ok)el.focus();ok=false}else{er.textContent='';el.removeAttribute('aria-invalid')}
-    });
-    if(!ok)return;
-    var v=function(id){return document.getElementById(id).value.trim()};
-    var text='Hello Delmar, I would like an InsightScholar demo.\n\nSchool: '+v('f-school')+'\nName: '+v('f-name')+' ('+v('f-role')+')\nLearners: '+v('f-size')+'\nContact: '+v('f-contact')+(v('f-msg')?'\n\n'+v('f-msg'):'');
-    out.textContent=text;
-    document.getElementById('wa-send').href='https://wa.me/263786270017?text='+encodeURIComponent(text);
-    ready.hidden=false;
-    ready.scrollIntoView({behavior:'smooth',block:'nearest'});
-  });
-  document.getElementById('copy-msg').addEventListener('click',function(){copy(out.textContent,this,out)});
 })();
 </script>
-
 </body>
 </html>
